@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Patient_Details.aspx.cs" Inherits="RepApp.Patient_Details" MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Title="Patient Details" Language="C#" AutoEventWireup="true" CodeBehind="Patient_Details.aspx.cs" Inherits="RepApp.Patient_Details" MasterPageFile="~/Site.Master" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
@@ -8,31 +8,31 @@
     <article>
         <table class="style1">
             <tr>
-                <td class="style2">
+                <td class="style2" style="height: 40px">
                     Patient ID:</td>
-                <td class="style3">
+                <td class="style3" style="height: 40px">
                     <asp:TextBox ID="PatientIDTextBox" runat="server" Height="25px" 
                         Width="245px"></asp:TextBox>
                 </td>
-                <td>
+                <td style="height: 40px">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                         ControlToValidate="PatientIDTextBox" 
                         ErrorMessage="Please fill in patient Id." ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
-                <td class="style2">
+                <td class="style2" style="height: 40px">
                     First Name:</td>
-                <td class="style3">
+                <td class="style3" style="height: 40px">
                     <asp:TextBox ID="FirstNameTextBox" runat="server" Height="25px" Width="245px"></asp:TextBox>
                 </td>
-                <td>
+                <td style="height: 40px">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                         ControlToValidate="FirstNameTextBox" 
                         ErrorMessage="Please fill first name." ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <tr>
+            <tr style="height: 40px">
                 <td class="style2">
                     Middle Name:</td>
                 <td class="style3">
@@ -44,7 +44,7 @@
                         ErrorMessage="Please fill middle name." ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <tr>
+            <tr style="height: 40px">
                 <td class="style2">
                     Last Name:</td>
                 <td class="style3">
@@ -56,7 +56,7 @@
                         ErrorMessage="Please fill last name." ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <tr>
+            <tr style="height: 40px">
                 <td class="style2">
                     Age:</td>
                 <td class="style3">
@@ -68,7 +68,7 @@
                         ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <tr>
+            <tr style="height: 40px">
                 <td class="style2">
                     Gender:</td>
                 <td class="style3">
@@ -81,18 +81,18 @@
                 </td>
             </tr>
             <tr>
-                <td class="style2">
+                <td class="style2" style="height: 40px">
                     Next Of Kin:</td>
-                <td class="style3">
+                <td class="style3" style="height: 40px">
                     <asp:TextBox ID="NextOfKinTextBox" runat="server" Height="25px" Width="245px"></asp:TextBox>
                 </td>
-                <td>
+                <td style="height: 40px">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
                         ControlToValidate="NextOfKinTextBox" ErrorMessage="Please fill next of kin" 
                         ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <tr>
+            <tr style="height: 40px">
                 <td class="style2">
                     E mail:</td>
                 <td class="style3">
@@ -104,7 +104,7 @@
                         ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <tr>
+            <tr style="height: 40px">
                 <td class="style2">
                     Phone no:</td>
                 <td class="style3">
@@ -116,7 +116,7 @@
                         ErrorMessage="Please fill phone no." ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <tr>
+            <tr style="height: 40px">
                 <td class="style2">
                     Address:</td>
                 <td class="style3">
@@ -128,7 +128,7 @@
                         ErrorMessage="Please fill date." ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <tr>
+            <tr tabindex="height: 40px">
                 <td class="style2">
                     Nationality:</td>
                 <td class="style3">
@@ -140,12 +140,12 @@
                         ErrorMessage="Please fill nationality." ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <tr>
+            <tr style="height: 40px">
                 <td>
                     &nbsp;</td>
                 <td class="style3">
-                    <asp:Button ID="SubmitButton" runat="server" Text="Submit" Width="106px" 
-                        onclick="SubmitButton_Click" />
+                    <asp:Button ID="SubmitButton" runat="server" Text="Submit" Width="68px" 
+                        onclick="SubmitButton_Click" />&nbsp;&nbsp;
                     <input id="CancelButton" type="reset" value="Cancel" /></td>
                 <td>
                     &nbsp;</td>
@@ -160,12 +160,9 @@
             </tr>
     </table>
     </article>
-
+    <hr />
     <aside>
-        <h3>Aside Title</h3>
-        <p>        
-            Go to.
-        </p>
+        <h3>Go to</h3>
         <ul>
         <li><a href="Review_Patient.aspx">Review Patient</a></li>
             <li><a href="#">Patient History</a></li>
@@ -176,19 +173,4 @@
         </ul>
     </aside>
 </asp:Content>
-<asp:Content ID="Content1" runat="server" contentplaceholderid="HeadContent">
-    <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
-        .style2
-        {
-            text-align: right;
-        }
-        .style3
-        {
-            width: 227px;
-        }
-    </style>
-</asp:Content>
+

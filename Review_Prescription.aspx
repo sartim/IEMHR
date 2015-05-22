@@ -24,8 +24,6 @@
     <p><a href="Eprescribe.aspx">Go to E Prescription Page</a></p>
 </article>
 </asp:Content>
-<asp:Content ID="Content1" runat="server" contentplaceholderid="HeadContent">
-    </asp:Content>
 
 
 

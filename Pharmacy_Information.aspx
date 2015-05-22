@@ -13,12 +13,9 @@
 
 
     </article>
-
+    <hr />
     <aside>
-        <h3>Aside Title</h3>
-        <p>        
-            Go to.
-        </p>
+        <h3>Go to</h3>
         <ul>
         <li><a href="Review_Prescription.aspx">Review Prescription</a></li>
             <li><a href="Prescription_History.aspx">Prescription History</a></li>
@@ -30,19 +27,4 @@
         </ul>
     </aside>
 </asp:Content>
-<asp:Content ID="Content1" runat="server" contentplaceholderid="HeadContent">
-    <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
-        .style2
-        {
-            text-align: right;
-        }
-        .style3
-        {
-            width: 227px;
-        }
-    </style>
-</asp:Content>
+

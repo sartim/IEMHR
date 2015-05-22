@@ -2,61 +2,184 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head runat="server">
-    <meta charset="utf-8" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" /> 
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <asp:PlaceHolder runat="server">        
-        <script src="<%: ResolveUrl("~/Scripts/modernizr-2.6.2.js") %>"></script>
-    </asp:PlaceHolder>
-    <meta name="viewport" content="width=device-width" />
-    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title><%: Page.Title %></title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
     <form runat="server">
-    <asp:ScriptManager runat="server">
-        <Scripts>
-            <asp:ScriptReference Name="jquery" />
-            <asp:ScriptReference Name="jquery.ui.combined" />
-        </Scripts>
-    </asp:ScriptManager>
-    <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title"><a runat="server" href="~/">IEMHR</a></p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">IEMHR</a>
             </div>
-            <div class="float-right">
-                <section id="login">
-                    <asp:Label ID="Hello_Label" runat="server" Text="Hello,"></asp:Label>
-                    <asp:HyperLink ID="HyperLink1" runat="server" 
-                    ondatabinding="LogoutButton_Click">Logout</asp:HyperLink>
-                    <asp:Button ID="LogoutButton" runat="server" Text="Logout" Height="35px" 
-                    onclick="LogoutButton_Click" Visible="False"></asp:Button>
-                </section>
-                <nav>
-                    <ul id="menu">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
-                </nav>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="Default.aspx">Home</a>
+                    </li>
+                    <li>
+                        <a href="About.aspx">About</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">EMR <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="Patient_Details.aspx">Patient Details</a>
+                            </li>
+                            <li>
+                                <a href="Review_Patient.aspx">Patient Review</a>
+                            </li>
+                            <li>
+                                <a href="#">Clinical Details</a>
+                            </li>
+                            <li>
+                                <a href="#">Patient Insruction</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">EHR <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Remote patient chart and record view</a>
+                            </li>
+                            <li>
+                                <a href="#">Update patient chart</a>
+                            </li>
+                            <li>
+                                <a href="#">Task assignment</a>
+                            </li>
+                            <li>
+                                <a href="#">Test Results</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">E Prescription <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="Prescription_Details.aspx">Prescription Details</a>
+                            </li><li>
+                                <a href="Prescription_History.aspx">Prescription History</a>
+                            </li>
+                            <li>
+                                <a href="Review_Prescription.aspx">Prescription Review</a>
+                            </li>
+                            <li>
+                                <a href="Pharmacy_Information.aspx">Pharmacy Details</a>
+                            </li>
+                            <li>
+                                <a href="Prescriber_Details.aspx">Prescriber Details</a>
+                            </li>
+                            <li>
+                                <a href="#">Clinical Charting</a>
+                            </li>
+                            <li>
+                                <a href="#">Order &amp; Results</a>
+                            </li>
+                            <li>
+                                <a href="#">Patient Referrals</a>
+                            </li>
+                            <li>
+                                <a href="#">Load Pharmacy Gmap</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Account <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                               <asp:Label ID="HelloLabel" runat="server" Text="Hello, "></asp:Label> 
+                            </li>
+                            <li>
+                                <a href="#">Change Password</a>
+                            </li>
+                            <li>
+                                <a href="#">Profile</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Account</a>
+                            </li>
+                            <li>
+                                <asp:Button ID="LogoutButton" runat="server" Text="Logout" OnCommand="LogoutButton_Command" />
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
+            <!-- /.navbar-collapse -->
         </div>
-    </header>
-    <div id="body">
-        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
-        <section class="content-wrapper main-content clear-fix">
-            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
-        </section>
+        <!-- /.container -->
+    </nav>
+
+    
+    <!-- Page Content -->
+    <div class="container">
+        
+        <!-- Footer -->
+        <footer>
+            <div>
+                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <hr />
+                    <p><a href="http://tymevotec.somee.com/">TYMEVOTEC</a>&copy; <%: DateTime.Now.Year %> - All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
-    <footer>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p><a href="http://tymevotec.somee.com/">TYMEVOTEC</a>&copy; <%: DateTime.Now.Year %> - All Rights Reserved</p>
-            </div>
-        </div>
-    </footer>
-    </form>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+    </script>
+</form>
 </body>
+
 </html>

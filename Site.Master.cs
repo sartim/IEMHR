@@ -69,13 +69,13 @@ namespace RepApp
         {
             if (Session["New"] != null)
             {
-                Hello_Label.Text += Session["New"].ToString();
+                HelloLabel.Text += Session["New"].ToString();
             }
             else
                 Response.Redirect("Login.aspx");
         }
 
-        protected void LogoutButton_Click(object sender, EventArgs e)
+        protected void LogoutButton_Command(object sender, CommandEventArgs e)
         {
             Session["New"] = null;
             Response.Redirect("Login.aspx");

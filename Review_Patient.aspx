@@ -46,5 +46,3 @@
     <p><a href="Electronic_Medical_Record.aspx">Go to EMR Page</a></p>
 </article>
 </asp:Content>
-<asp:Content ID="Content1" runat="server" contentplaceholderid="HeadContent">
-    </asp:Content>

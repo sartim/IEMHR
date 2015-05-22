@@ -157,13 +157,13 @@ namespace RepApp {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
         
         /// <summary>
-        /// PatientIdTextBox control.
+        /// CompanyTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PatientIdTextBox;
+        protected global::System.Web.UI.WebControls.TextBox CompanyTextBox;
         
         /// <summary>
         /// RequiredFieldValidator9 control.

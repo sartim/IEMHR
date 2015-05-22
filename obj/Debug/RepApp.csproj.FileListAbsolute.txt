@@ -29,3 +29,5 @@ C:\Visual Studio Projects\RepApp\RepApp\obj\Debug\RepApp.csprojResolveAssemblyRe
 C:\Visual Studio Projects\RepApp\RepApp\obj\Debug\RepApp.dll
 C:\Visual Studio Projects\RepApp\RepApp\obj\Debug\RepApp.pdb
 C:\Visual Studio Projects\RepApp\RepApp\bin\RepApp.dll.config
+C:\Visual Studio Projects\RepApp\RepApp\obj\Debug\RdlCompile.cache
+C:\Visual Studio Projects\RepApp\RepApp\obj\Debug\RdlCompile.compiled

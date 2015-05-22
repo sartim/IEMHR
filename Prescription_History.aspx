@@ -2,7 +2,7 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
-        <h1><%: Title %>.</h1>
+        <h1><%: Page.Title %></h1>
     </hgroup>
 
     <article>
@@ -48,6 +48,7 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
+        <hr />
         <ul>
             <li><a href="#">Export to Excell</a></li>
             <li><a href="#">Display Report</a></li>

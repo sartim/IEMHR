@@ -208,6 +208,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Import_Export_Patient_Details.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\contact_me.js" />
@@ -216,7 +217,6 @@
     <Content Include="Login.aspx" />
     <Content Include="Manage.aspx" />
     <Content Include="packages.config" />
-    <Content Include="WebForm1.aspx" />
     <None Include="font-awesome\fonts\fontawesome-webfont.eot" />
     <None Include="font-awesome\fonts\fontawesome-webfont.ttf" />
     <None Include="font-awesome\fonts\fontawesome-webfont.woff" />
@@ -267,7 +267,6 @@
     <None Include="IEMHRDataSet.xss">
       <DependentUpon>IEMHRDataSet.xsd</DependentUpon>
     </None>
-    <Content Include="MasterSite.Master" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Prescription_Details.aspx" />
     <Content Include="Pharmacy_Information.aspx" />
@@ -344,6 +343,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IEMHRDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Import_Export_Patient_Details.aspx.cs">
+      <DependentUpon>Import_Export_Patient_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Import_Export_Patient_Details.aspx.designer.cs">
+      <DependentUpon>Import_Export_Patient_Details.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -357,13 +363,6 @@
     </Compile>
     <Compile Include="Manage.aspx.designer.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MasterSite.Master.cs">
-      <DependentUpon>MasterSite.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterSite.Master.designer.cs">
-      <DependentUpon>MasterSite.Master</DependentUpon>
     </Compile>
     <Compile Include="Patient_Details.aspx.cs">
       <DependentUpon>Patient_Details.aspx</DependentUpon>
@@ -449,13 +448,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
