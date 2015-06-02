@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1c8731f107f24b818de7669959fdeea3" Name="Diagram1">
+        <EntityTypeShape EntityType="IEMHR_DBModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.AspNetRole" Width="1.5" PointX="5.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.AspNetUser" Width="1.5" PointX="8" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.PatientMaster" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.PharmacyMaster" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.PhysicianMaster" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.PrescriptionMaster" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.TestMaster" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_Prescription_Details_Patient_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_Test_Details_Patient_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_PrescriptionMaster_PharmacyMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_Prescription_Details_Practitioner_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_Test_Details_Practitioner_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

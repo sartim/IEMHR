@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IEMHR_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PatientMaster">
+    <Key>
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="PatientId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Age" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="HomeAddress" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PhoneNum" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Nationality" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NextOfKin" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NextOfKinContact" Type="varchar" MaxLength="12" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PharmacyMaster">
+    <Key>
+      <PropertyRef Name="PharmacyId" />
+    </Key>
+    <Property Name="PharmacyId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PharmacyName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="LocLat" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="LocLong" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="URL" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PhoneNum" Type="varchar" MaxLength="12" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhysicianMaster">
+    <Key>
+      <PropertyRef Name="PhysicianId" />
+    </Key>
+    <Property Name="PhysicianId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PhoneNo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="MPDBRegNo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Company" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrescriptionMaster">
+    <Key>
+      <PropertyRef Name="PrescriptionId" />
+    </Key>
+    <Property Name="PrescriptionId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PrescriberName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PhysicianId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PatientName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PatientId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Diagnosis" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DrugName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Dose" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="DoseUnits" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Frequency" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="NumOfDays" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="SubmitDate" Type="datetime" Nullable="false" />
+    <Property Name="ProcessedDate" Type="datetime" Nullable="false" />
+    <Property Name="Allergies" Type="varchar" MaxLength="30" />
+    <Property Name="Comments" Type="varchar" MaxLength="50" />
+    <Property Name="Refills" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="IssueTo" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PharmacyId" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TestMaster">
+    <Key>
+      <PropertyRef Name="TestId" />
+    </Key>
+    <Property Name="TestId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Test" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="RecievedDate" Type="datetime" Nullable="false" />
+    <Property Name="SentDate" Type="datetime" Nullable="false" />
+    <Property Name="Result" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PractitionerId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PatientID" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Prescription_Details_Patient_Details">
+    <End Role="PatientMaster" Type="Self.PatientMaster" Multiplicity="1" />
+    <End Role="PrescriptionMaster" Type="Self.PrescriptionMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientMaster">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="PrescriptionMaster">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Prescription_Details_Practitioner_Details">
+    <End Role="PhysicianMaster" Type="Self.PhysicianMaster" Multiplicity="1" />
+    <End Role="PrescriptionMaster" Type="Self.PrescriptionMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicianMaster">
+        <PropertyRef Name="PhysicianId" />
+      </Principal>
+      <Dependent Role="PrescriptionMaster">
+        <PropertyRef Name="PhysicianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PrescriptionMaster_PharmacyMaster">
+    <End Role="PharmacyMaster" Type="Self.PharmacyMaster" Multiplicity="1" />
+    <End Role="PrescriptionMaster" Type="Self.PrescriptionMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PharmacyMaster">
+        <PropertyRef Name="PharmacyId" />
+      </Principal>
+      <Dependent Role="PrescriptionMaster">
+        <PropertyRef Name="PharmacyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Test_Details_Patient_Details">
+    <End Role="PatientMaster" Type="Self.PatientMaster" Multiplicity="1" />
+    <End Role="TestMaster" Type="Self.TestMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientMaster">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="TestMaster">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Test_Details_Practitioner_Details">
+    <End Role="PhysicianMaster" Type="Self.PhysicianMaster" Multiplicity="1" />
+    <End Role="TestMaster" Type="Self.TestMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicianMaster">
+        <PropertyRef Name="PhysicianId" />
+      </Principal>
+      <Dependent Role="TestMaster">
+        <PropertyRef Name="PractitionerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IEMHR_DBModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientMaster" EntityType="Self.PatientMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PharmacyMaster" EntityType="Self.PharmacyMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhysicianMaster" EntityType="Self.PhysicianMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrescriptionMaster" EntityType="Self.PrescriptionMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestMaster" EntityType="Self.TestMaster" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Prescription_Details_Patient_Details" Association="Self.FK_Prescription_Details_Patient_Details">
+      <End Role="PatientMaster" EntitySet="PatientMaster" />
+      <End Role="PrescriptionMaster" EntitySet="PrescriptionMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Prescription_Details_Practitioner_Details" Association="Self.FK_Prescription_Details_Practitioner_Details">
+      <End Role="PhysicianMaster" EntitySet="PhysicianMaster" />
+      <End Role="PrescriptionMaster" EntitySet="PrescriptionMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PrescriptionMaster_PharmacyMaster" Association="Self.FK_PrescriptionMaster_PharmacyMaster">
+      <End Role="PharmacyMaster" EntitySet="PharmacyMaster" />
+      <End Role="PrescriptionMaster" EntitySet="PrescriptionMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Details_Patient_Details" Association="Self.FK_Test_Details_Patient_Details">
+      <End Role="PatientMaster" EntitySet="PatientMaster" />
+      <End Role="TestMaster" EntitySet="TestMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Details_Practitioner_Details" Association="Self.FK_Test_Details_Practitioner_Details">
+      <End Role="PhysicianMaster" EntitySet="PhysicianMaster" />
+      <End Role="TestMaster" EntitySet="TestMaster" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

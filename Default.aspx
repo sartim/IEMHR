@@ -1,59 +1,55 @@
-﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="RepApp._Default" %>
+﻿<%@ Page Title="Login Page" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="IEMHR.Login1" MasterPageFile="~/Account.Master" %>
 
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+    <h2><%: Title %>.</h2>
 
-
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="jumbotron">
-        <h1>IEMHR</h1>
-        <p class="lead">Integrated Medical &amp; Health record is a system which integrates E Prescription, EHR &amp; EHR. </p>
-        <p><a href="#" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
-    
-    <!-- Services section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    Get started with
-                </h1>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> E Prescription</h4>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
+                <div class="form-horizontal">
+                    <h4>Use a local account to log in.</h4>
+                    <asp:Literal ID="litStatus" runat="server"></asp:Literal>
+                    <hr />
+                    <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
+                        <p class="text-danger">
+                            <asp:Literal runat="server" ID="FailureText" />
+                        </p>
+                    </asp:PlaceHolder>
+                    <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">User name</asp:Label>
+                        <div class="col-md-10">
+                            <asp:TextBox runat="server" ID="UserName" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
+                                CssClass="text-danger" ErrorMessage="The user name field is required." />
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        <p>Provides a secure way to electronically connect patients, healthcare providers, 
-            pharmacists and Pharmacy.</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
+                    <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
+                        <div class="col-md-10">
+                            <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                <asp:CheckBox runat="server" ID="RememberMe" />
+                                <asp:Label runat="server" AssociatedControlID="RememberMe">Remember me?</asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:Button runat="server" Text="Log in" CssClass="btn btn-default" ID="LoginButton" OnClick="LoginButton_Click" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-gift"></i> EMR</h4>
-                    </div>
-                    <div class="panel-body">
-                        <p>Billing system integration, automatic remiders, document scanning and medical 
-            tracking.</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-compass"></i> EHR</h4>
-                    </div>
-                    <div class="panel-body">
-                        <p>Share info with other healthcare providers, follow patient, get information from 
-            all the clinicians in volved and more.&nbsp;</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-            </div>
+                <p>
+                    <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" NavigateUrl="Register.aspx">Register</asp:HyperLink>
+                    if you don't have a local account.
+                </p>
+            </section>
         </div>
-        <!-- /.row -->
-        <hr />
-
+     </div>
 </asp:Content>
+

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RepApp {
+namespace IEMHR {
     
     
     public partial class Site_Mobile {

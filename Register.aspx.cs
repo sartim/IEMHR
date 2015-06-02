@@ -4,57 +4,64 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Configuration;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
 
-namespace RepApp
+namespace IEMHR
 {
     public partial class Register1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
-            {
-                SqlConnection dbCon = new SqlConnection(ConfigurationManager.ConnectionStrings["IEMHRConnectionString"].ConnectionString);
-                dbCon.Open();
-                string checkuser = "SELECT count(*) FROM Users where UserName = '" + UserNameTextBox.Text + "'";
-                SqlCommand cmd = new SqlCommand(checkuser, dbCon);
-                int temp = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-                if (temp == 1)
-                {
-                    Response.Write("User already exists");
-                }
 
-                dbCon.Close();
-            }
         }
 
         protected void RegisterButton_Click(object sender, EventArgs e)
         {
-            try
+            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+
+            userStore.Context.Database.Connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["IEMHRConnectionString"].ConnectionString;
+
+            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+            //Create new user and try to store in DB.
+            IdentityUser user = new IdentityUser();
+            user.UserName = txtUserName.Text;
+            if (txtPassword.Text == txtConfirmPassword.Text)
             {
-                Guid newGUID = Guid.NewGuid();
+                try
+                {
+                    //Create user object.
+                    //Database will be created / expanded automatically.
+                    IdentityResult result = manager.Create(user, txtPassword.Text);
 
-                SqlConnection dbCon = new SqlConnection(ConfigurationManager.ConnectionStrings["IEMHRConnectionString"].ConnectionString);
+                    if (result.Succeeded)
+                    {
+                        //Store user in DB.
+                        var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
 
-                string insertQuery = "INSERT INTO Users (Id, UserName, Email, Password) VALUES (@Id, @Uname, @Email, @Password, @Sname)";
-                SqlCommand cmd = new SqlCommand(insertQuery, dbCon);
-                cmd.Parameters.AddWithValue("@Id", newGUID.ToString());
-                cmd.Parameters.AddWithValue("@Uname", UserNameTextBox.Text);
-                cmd.Parameters.AddWithValue("@Email", EmailTextBox.Text);
-                cmd.Parameters.AddWithValue("@Password", PassTextBox.Text);
+                        //Set to log in new user by Cookie.
+                        var userIdentity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
 
-                dbCon.Open();
-                cmd.ExecuteNonQuery();
-                Response.Write("Registration is successful");
-                Response.Redirect("Login.aspx");
-                dbCon.Close();
+                        //Log in the new user and direct to homepage
+                        authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
+                        Response.Redirect("Pages/Default.aspx");
+                    }
+                    else
+                    {
+                        ErrorMessage.Text = result.Errors.FirstOrDefault();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ErrorMessage.Text = ex.ToString();
+                }
+
             }
-            catch (Exception ex)
+            else
             {
-                Response.Write("Error: " + ex.ToString());
+                ErrorMessage.Text = "Passwords must match";
             }
-        }
         }
     }
-
+}
