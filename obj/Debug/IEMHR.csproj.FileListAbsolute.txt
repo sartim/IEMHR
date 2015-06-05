@@ -51,3 +51,5 @@ C:\Users\TIM\Desktop\Projects\IEMHR\IEMHR\bin\System.Web.Providers.xml
 C:\Users\TIM\Desktop\Projects\IEMHR\IEMHR\obj\Debug\IEMHR.dll
 C:\Users\TIM\Desktop\Projects\IEMHR\IEMHR\obj\Debug\IEMHR.pdb
 C:\Users\TIM\Desktop\Projects\IEMHR\IEMHR\obj\Debug\IEMHR.csprojResolveAssemblyReference.cache
+C:\Users\TIM\Desktop\Projects\IEMHR\IEMHR\obj\Debug\RdlCompile.cache
+C:\Users\TIM\Desktop\Projects\IEMHR\IEMHR\obj\Debug\RdlCompile.compiled

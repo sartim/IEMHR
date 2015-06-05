@@ -69,6 +69,7 @@
                             <li>
                                 <a href="Prescription_Review.aspx">Prescription Review</a>
                             </li>
+
                             <li class="divider"></li>
                             <li class="dropdown-header">Pharmacy Management</li>
                             <li>
@@ -78,8 +79,12 @@
                                 <a href="Pharmacy_Review.aspx">Pharmacy Review</a>
                             </li>
                             <li>
+                                <a href="Pharmacy_Report.aspx">Pharmacy Report</a>
+                            </li>
+                            <li>
                                 <a href="Pharmacy_Gmap.aspx">Pharmacy Map Location</a>
                             </li>
+                            
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -91,6 +96,9 @@
                             </li>
                             <li>
                                 <a href="Patient_Review.aspx">Patient Review</a>
+                            </li>
+                            <li>
+                                <a href="Patient_Report.aspx">Patient Report</a>
                             </li>
                             <li class="divider"></li>
                             <li class="dropdown-header">Clinic Management</li>

@@ -49,6 +49,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AspNet.ScriptManager.jQuery.2.1.4\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -109,6 +113,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -204,6 +209,29 @@
       <DependentUpon>IEMHR_DB_Model.edmx</DependentUpon>
       <LastGenOutput>IEMHR_DB_Model.cs</LastGenOutput>
     </Content>
+    <Content Include="Pages\Patient_Report.aspx" />
+    <Content Include="PatientDataSet.xsc">
+      <DependentUpon>PatientDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="PatientDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PatientDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PatientDataSet.xss">
+      <DependentUpon>PatientDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="PharmacyDataSet.xsc">
+      <DependentUpon>PharmacyDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="PharmacyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PharmacyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PharmacyDataSet.xss">
+      <DependentUpon>PharmacyDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Pages\EHR.aspx" />
     <Content Include="Pages\EMR.aspx" />
@@ -211,6 +239,7 @@
     <Content Include="Pages\Managment\Admin_Management.aspx" />
     <Content Include="Pages\Patient_Details.aspx" />
     <Content Include="Pages\Patient_Review.aspx" />
+    <Content Include="Pages\Pharmacy_Report.aspx" />
     <Content Include="Pages\Pharmacy_Details.aspx" />
     <Content Include="Pages\Pharmacy_Gmap.aspx" />
     <Content Include="Pages\Pharmacy_Review.aspx" />
@@ -392,12 +421,26 @@
     <Compile Include="Pages\Patient_Details.aspx.designer.cs">
       <DependentUpon>Patient_Details.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Patient_Report.aspx.cs">
+      <DependentUpon>Patient_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Patient_Report.aspx.designer.cs">
+      <DependentUpon>Patient_Report.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Patient_Review.aspx.cs">
       <DependentUpon>Patient_Review.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Patient_Review.aspx.designer.cs">
       <DependentUpon>Patient_Review.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Pharmacy_Report.aspx.cs">
+      <DependentUpon>Pharmacy_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Pharmacy_Report.aspx.designer.cs">
+      <DependentUpon>Pharmacy_Report.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Pharmacy_Details.aspx.cs">
       <DependentUpon>Pharmacy_Details.aspx</DependentUpon>
@@ -434,6 +477,16 @@
     <Compile Include="Pages\Prescription_Review.aspx.designer.cs">
       <DependentUpon>Prescription_Review.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PatientDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmacyDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -465,10 +518,15 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\rdlc\PatientReport.rdlc" />
+    <EmbeddedResource Include="Pages\rdlc\PharmacyReport.rdlc" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
