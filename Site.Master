@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="IEMHR.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="IEMHR_ASP_App.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -62,85 +62,88 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">EPM<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="dropdown-header">Prescription Management</li>
-                            <li>
-                                <a href="Prescription_Details.aspx">Prescription Details</a>
-                            </li>
-                            <li>
-                                <a href="Prescription_Review.aspx">Prescription Review</a>
-                            </li>
 
-                            <li class="divider"></li>
-                            <li class="dropdown-header">Pharmacy Management</li>
-                            <li>
-                                <a href="Pharmacy_Details.aspx">Pharmacy Details</a>
-                            </li>
-                            <li>
-                                <a href="Pharmacy_Review.aspx">Pharmacy Review</a>
-                            </li>
-                            <li>
-                                <a href="Pharmacy_Report.aspx">Pharmacy Report</a>
-                            </li>
-                            <li>
-                                <a href="Pharmacy_Gmap.aspx">Pharmacy Map Location</a>
-                            </li>
+                            <li class="dropdown-header"><b>Prescription Management</b></li>
+
+                            <li><a href="Prescription_Details.aspx">Prescription details</a></li>
+
+                            <li><a href="Prescription_Review.aspx">Prescription review</a></li>
+
+                                <li class="divider"></li>
+
+                            <li class="dropdown-header"><b>Pharmacy Management</b></li>
+
+                            <li><a href="Pharmacy_Details.aspx">Pharmacy details</a></li>
+
+                            <li><a href="Pharmacy_Review.aspx">Pharmacy review</a></li>
+
+                            <li><a href="#">Pharmacy report</a></li>
+
+                            <li><a href="#">Insurer fee schedule</a></li>
+
+                            <li><a href="Pharmacy_Gmap.aspx">Pharmacy Location</a></li>
                             
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">EMR <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="dropdown-header">Patient Management</li>
-                            <li>
-                                <a href="Patient_Details.aspx">Patient Details</a>
-                            </li>
-                            <li>
-                                <a href="Patient_Review.aspx">Patient Review</a>
-                            </li>
-                            <li>
-                                <a href="Patient_Report.aspx">Patient Report</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">Clinic Management</li>
-                            <li>
-                                <a href="#">Clinical Details</a>
-                            </li>
-                            <li>
-                                <a href="#">In Patient</a>
-                            </li>
-                            <li>
-                                <a href="#">Out Patient</a>
-                            </li>
+                            <li class="dropdown-header"><b>Patient Management</b></li>
+
+                            <li><a href="Patient_Details.aspx">Patient details</a></li>
+
+                            <li><a href="Patient_Review.aspx">Patient review</a></li>
+
+                            <li><a href="#">Patient Report</a></li>
+
+                                <li class="divider"></li>
+
+                            <li class="dropdown-header"><b>Administrative</b></li>
+                            
+                            <li><a href="#">Record view</a></li>
+
+                            <li><a href="Patient_Chart.aspx">Patient chart</a></li>
+                            
+                            <li><a href="#">Patient referrals</a></li>
+
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">EHR <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="dropdown-header">Patient Management</li>
-                            <li>
-                                <a href="#">Record View</a>
-                            </li>
-                            <li>
-                                <a href="#">Patient Chart</a>
-                            </li>
+
+                            <li class="dropdown-header"><b>Physician Management</b></li>
+
+                            <li><a href="Physician_Details.aspx">Physician details</a></li>
+
+                            <li><a href="Physician_Review.aspx">Physician review</a></li>
+
+                            <li><a href="Physician_Review.aspx">Physician report</a></li>
+
+                                <li class="divider"></li>
+
+                            <li class="dropdown-header"><b>Scheduling Management</b></li>
+
+                            <li><a href="#">Patient scheduling</a></li>
+
+                            <li><a href="#">Task assignment</a></li>
+
+                            <li><a href="#">Test results</a></li>
                             
-                            <li>
-                                <a href="#">Patient Referrals</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">Clinic Management</li>
-                            <li>
-                                <a href="#">Task assignment</a>
-                            </li>
-                            <li>
-                                <a href="#">Test Results</a>
-                            </li>
-                            <li>
-                                <a href="#">Clinical Charting</a>
-                            </li>
-                            <li>
-                                <a href="#">Order &amp; Results</a>
-                            </li>
+                            <li><a href="#">Order &amp; results</a></li>
+
+                                <li class="divider"></li>
+
+                            <li class="dropdown-header"><b>Clinic Management</b></li>
+
+                            <li><a href="#">Clinic details</a></li>
+
+                            <li><a href="#">Clinic review</a></li>
+                            
+                            <li><a href="#">Billing</a></li>
+
+                            <li><a href="#">Clinical charting</a></li>
+
                         </ul>
                     </li>
                         <asp:LoginView runat="server" ViewStateMode="Disabled" OnDisposed="Page_Init">
@@ -154,7 +157,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="#" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
-                                 <asp:LinkButton ID="LogoutLinkBtn" runat="server" OnClick="LogoutLinkBtn_Click" >Logout</asp:LinkButton>   
+                                 <asp:LinkButton ID="LogoutLinkBtn" runat="server" OnClick="LogoutLinkBtn_Click" >Logout</asp:LinkButton>
                                 </li>
                             </ul>
                         </LoggedInTemplate>
@@ -164,7 +167,7 @@
                 </div>
             </div>
             </nav>
-        
+           
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 
@@ -183,3 +186,4 @@
     </form>
 </body>
 </html>
+

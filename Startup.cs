@@ -3,8 +3,8 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(IEMHR.Startup))]
-namespace IEMHR
+[assembly: OwinStartupAttribute(typeof(IEMHR_ASP_App.Startup))]
+namespace IEMHR_ASP_App
 {
     public partial class Startup {
         public void Configuration(IAppBuilder app) {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Patient Details" Language="C#" AutoEventWireup="true" CodeBehind="Patient_Details.aspx.cs" Inherits="IEMHR.Pages.Patient_Details" MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Title="Patient details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Patient_Details.aspx.cs" Inherits="IEMHR_ASP_App.Pages.Patient_Details" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
@@ -10,14 +10,7 @@
         <h4>Fill in new patient.</h4>
         <hr />
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="text-danger" />
-        <div class="form-group">
-            <asp:Label ID="Label1" runat="server" AssociatedControlID="txtPatientId" CssClass="col-md-2 control-label">Patient ID</asp:Label>
-            <div class="col-md-10">
-                <asp:TextBox runat="server" ID="txtPatientId" CssClass="form-control" />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPatientId"
-                    CssClass="text-danger" ErrorMessage="The patient Id field is required." />
-            </div>
-        </div>
+        
         <div class="form-group">
             <asp:Label ID="Label2" runat="server" AssociatedControlID="txtFirstName" CssClass="col-md-2 control-label">First Name</asp:Label>
             <div class="col-md-10">

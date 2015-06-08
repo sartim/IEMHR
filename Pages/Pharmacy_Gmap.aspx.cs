@@ -1,15 +1,11 @@
-﻿using IEMHR.Models;
-using Subgurim.Controles;
-using Subgurim.Controles.GoogleChartIconMaker;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace IEMHR.Pages
+namespace IEMHR_ASP_App.Pages
 {
     public partial class Pharmacy_Gmap : System.Web.UI.Page
     {
@@ -42,7 +38,7 @@ namespace IEMHR.Pages
             //        win = new GInfoWindow(gm, i.PharmacyName + i.Location + " <a href='" + i.URL + ")More..</a>", false, GListener.Event.mouseover);
             //        GMap1.Add(win);
             //    }
-               
+
 
             //}
         }

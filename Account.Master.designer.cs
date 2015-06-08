@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IEMHR {
+namespace IEMHR_ASP_App {
     
     
     public partial class Account {

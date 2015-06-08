@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IEMHR {
+namespace IEMHR_ASP_App {
     
     
-    public partial class Login1 {
+    public partial class Default {
         
         /// <summary>
         /// litStatus control.

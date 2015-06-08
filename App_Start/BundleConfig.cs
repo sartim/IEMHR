@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Optimization;
 using System.Web.UI;
 
-namespace IEMHR
+namespace IEMHR_ASP_App
 {
     public class BundleConfig
     {

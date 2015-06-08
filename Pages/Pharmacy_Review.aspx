@@ -1,10 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Pharmacy_Review.aspx.cs" Inherits="IEMHR.Pages.Pharmacy_Review" %>
+﻿<%@ Page Title="Pharmacy review" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Pharmacy_Review.aspx.cs" Inherits="IEMHR_ASP_App.Pages.Pharmacy_Review" %>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="PharmacyId" DataSourceID="PharmacySqlDataSource" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="PharmacyId" DataSourceID="PharmacySqlDataSource" CellPadding="4" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
             <asp:BoundField DataField="PharmacyId" HeaderText="PharmacyId" ReadOnly="True" SortExpression="PharmacyId" />
             <asp:BoundField DataField="PharmacyName" HeaderText="PharmacyName" SortExpression="PharmacyName" />
             <asp:BoundField DataField="LocLat" HeaderText="LocLat" SortExpression="LocLat" />
@@ -26,7 +27,7 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-    <asp:SqlDataSource ID="PharmacySqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:IEMHRConnectionString %>" DeleteCommand="DELETE FROM [PharmacyMaster] WHERE [PharmacyId] = @PharmacyId" InsertCommand="INSERT INTO [PharmacyMaster] ([PharmacyId], [PharmacyName], [LocLat], [LocLong], [Location], [Country], [Email], [URL], [PhoneNum]) VALUES (@PharmacyId, @PharmacyName, @LocLat, @LocLong, @Location, @Country, @Email, @URL, @PhoneNum)" SelectCommand="SELECT * FROM [PharmacyMaster] ORDER BY [PharmacyName] DESC" UpdateCommand="UPDATE [PharmacyMaster] SET [PharmacyName] = @PharmacyName, [LocLat] = @LocLat, [LocLong] = @LocLong, [Location] = @Location, [Country] = @Country, [Email] = @Email, [URL] = @URL, [PhoneNum] = @PhoneNum WHERE [PharmacyId] = @PharmacyId">
+    <asp:SqlDataSource ID="PharmacySqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:IEMHRConnectionString %>" DeleteCommand="DELETE FROM [PharmacyMaster] WHERE [PharmacyId] = @PharmacyId" InsertCommand="INSERT INTO [PharmacyMaster] ([PharmacyId], [PharmacyName], [LocLat], [LocLong], [Location], [Country], [Email], [URL], [PhoneNum]) VALUES (@PharmacyId, @PharmacyName, @LocLat, @LocLong, @Location, @Country, @Email, @URL, @PhoneNum)" SelectCommand="SELECT * FROM [PharmacyMaster] ORDER BY [PharmacyId]" UpdateCommand="UPDATE [PharmacyMaster] SET [PharmacyName] = @PharmacyName, [LocLat] = @LocLat, [LocLong] = @LocLong, [Location] = @Location, [Country] = @Country, [Email] = @Email, [URL] = @URL, [PhoneNum] = @PhoneNum WHERE [PharmacyId] = @PharmacyId">
         <DeleteParameters>
             <asp:Parameter Name="PharmacyId" Type="String" />
         </DeleteParameters>
@@ -54,25 +55,25 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <p>&nbsp;</p>
-        <div class="form-group">
-            <asp:Label ID="Label1" runat="server" AssociatedControlID="txtSearchPharmacyId" CssClass="col-md-2 control-label"> Enter Pharmacy ID</asp:Label>
+    <div class="form-group">
+            <asp:Label ID="Label2" runat="server" AssociatedControlID="DropDownList1" CssClass="col-md-2 control-label">Display: </asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="txtSearchPharmacyId" CssClass="form-control" />
+               <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" DataSourceID="PharmacySqlDataSource" DataTextField="PharmacyName" DataValueField="PharmacyName"></asp:DropDownList>
             </div>
-            <p>&nbsp;</p>
-            <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" Text="Search" CssClass="btn btn-default" 
-                    ID="SearchButton" />
-            </div>
-        </div>
-        </div>
+    </div>
     <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <strong>Go&nbsp; to</strong><br />
-   <a class="btn btn-default" href="Pharmacy_Details.aspx">Pharmacy Details</a>
+    <div class="form-group">
+    <asp:Label ID="Label1" runat="server" AssociatedControlID="DropDownList1" CssClass="col-md-2 control-label">Go to: </asp:Label>
+        <div class="col-md-10">
+            <a class="btn btn-default" href="Pharmacy_Details.aspx">Pharmacy Details</a>
+        </div>
+    </div>
+    <div>
     <p>&nbsp;</p>
     <strong>Import/Export</strong><br />
     <a class="btn btn-default" href="#" title="Import to Excell">Import Excell</a>
     <a class="btn btn-default" href="#" title="Export to Excell">Export Excell</a>
+    </div>
+     
+
 </asp:Content>

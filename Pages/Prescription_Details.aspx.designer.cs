@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IEMHR.Pages {
+namespace IEMHR_ASP_App.Pages {
     
     
-    public partial class Prescription_Details1 {
+    public partial class Prescription_Details {
         
         /// <summary>
         /// ValidationSummary1 control.

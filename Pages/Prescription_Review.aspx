@@ -1,9 +1,8 @@
-﻿<%@ Page Title="Prescription Review" Language="C#" AutoEventWireup="true" CodeBehind="Prescription_Review.aspx.cs" Inherits="IEMHR.Pages.Prescription_Review" MasterPageFile="~/Site.Master" %>
-
+﻿<%@ Page Title="Prescription history" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Prescription_Review.aspx.cs" Inherits="IEMHR_ASP_App.Pages.Prescription_Review" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="PrescriptionId" DataSourceID="PrescriptionSqlDataSource" CellPadding="4" ForeColor="#333333" GridLines="None">
+
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="PrescriptionId" DataSourceID="PrescriptionSqlDataSource" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="PrescriptionId" HeaderText="PrescriptionId" ReadOnly="True" SortExpression="PrescriptionId" />
@@ -43,7 +42,7 @@
         <InsertParameters>
             <asp:Parameter Name="PrescriptionId" Type="String" />
             <asp:Parameter Name="PrescriberName" Type="String" />
-            <asp:Parameter Name="PhysicianId" Type="String" />
+            <asp:Parameter Name="PhysicianId" Type="Int32" />
             <asp:Parameter Name="PatientName" Type="String" />
             <asp:Parameter Name="PatientId" Type="String" />
             <asp:Parameter Name="Diagnosis" Type="String" />
@@ -62,7 +61,7 @@
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="PrescriberName" Type="String" />
-            <asp:Parameter Name="PhysicianId" Type="String" />
+            <asp:Parameter Name="PhysicianId" Type="Int32" />
             <asp:Parameter Name="PatientName" Type="String" />
             <asp:Parameter Name="PatientId" Type="String" />
             <asp:Parameter Name="Diagnosis" Type="String" />
@@ -82,28 +81,24 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <p>&nbsp;</p>
-        <div class="form-group">
-            <asp:Label ID="Label1" runat="server" AssociatedControlID="txtSearchPrescriptionId" CssClass="col-md-2 control-label"> Enter Prescription ID</asp:Label>
+    <div class="form-group">
+            <asp:Label ID="Label2" runat="server" AssociatedControlID="DropDownList1" CssClass="col-md-2 control-label">Display: </asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="txtSearchPrescriptionId" CssClass="form-control" />
+               <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" DataSourceID="PrescriptionSqlDataSource" DataTextField="PatientName" DataValueField="PatientName"></asp:DropDownList>
             </div>
-            <p>&nbsp;</p>
-            <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" Text="Search" CssClass="btn btn-default" 
-                    ID="SearchButton" />
-            </div>
-        </div>
-        </div>
+    </div>
     <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <strong>Go&nbsp; to</strong><br />
-   <a class="btn btn-default" href="Prescription_Details.aspx">Prescription Details</a>
+    <div class="form-group">
+    <asp:Label ID="Label1" runat="server" AssociatedControlID="DropDownList1" CssClass="col-md-2 control-label">Go to: </asp:Label>
+        <div class="col-md-10">
+            <a class="btn btn-default" href="PRescription_Details.aspx">Prescription Details</a>
+        </div>
+    </div>
+    <div>
     <p>&nbsp;</p>
     <strong>Import/Export</strong><br />
     <a class="btn btn-default" href="#" title="Import to Excell">Import Excell</a>
     <a class="btn btn-default" href="#" title="Export to Excell">Export Excell</a>
+    </div>
+
 </asp:Content>
-
-
-

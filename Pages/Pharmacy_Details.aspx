@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Pharmacy Details" Language="C#" AutoEventWireup="true" CodeBehind="Pharmacy_Details.aspx.cs" Inherits="IEMHR.Pages.Pharmacy_Details" MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Title="Pharmacy details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Pharmacy_Details.aspx.cs" Inherits="IEMHR_ASP_App.Pages.Pharmacy_Details" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
@@ -7,18 +7,11 @@
     <div class="row">
  <div class="col-md-8">
     <div class="form-horizontal">
-        <h4>Fill in new patient.</h4>
+        <h4>Fill in new pharmacy.</h4>
         <hr />
 
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="text-danger" />
-        <div class="form-group">
-            <asp:Label ID="Label1" runat="server" AssociatedControlID="txtPharmacyId" CssClass="col-md-2 control-label">Pharmacy ID</asp:Label>
-            <div class="col-md-10">
-                <asp:TextBox runat="server" ID="txtPharmacyId" CssClass="form-control" />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPharmacyId"
-                    CssClass="text-danger" ErrorMessage="The pharmacy id field is required." />
-            </div>
-        </div>
+
         <div class="form-group">
             <asp:Label ID="Label2" runat="server" AssociatedControlID="txtPharmacyName" CssClass="col-md-2 control-label">Pharmacy Name</asp:Label>
             <div class="col-md-10">
@@ -88,6 +81,9 @@
                 <asp:Button runat="server" Text="Submit" CssClass="btn btn-default" 
                     ID="SubmitButton" OnClick="SubmitButton_Click" />
             </div>
+        </div>
+        <div>
+            <asp:Label ID="SubmitLabel" runat="server" Text=""></asp:Label> 
         </div>
       </div>
     </div>

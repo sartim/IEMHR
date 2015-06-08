@@ -7,7 +7,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace IEMHR
+namespace IEMHR_ASP_App
 {
     public partial class SiteMaster : MasterPage
     {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="EPM" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EPM.aspx.cs" Inherits="IEMHR.Pages.EPM" %>
+﻿<%@ Page Title="EPM" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EPM.aspx.cs" Inherits="IEMHR_ASP_App.Pages.EPM" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <hgroup class="title">

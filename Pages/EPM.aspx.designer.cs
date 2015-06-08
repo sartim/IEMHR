@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IEMHR.Pages
+namespace IEMHR_ASP_App.Pages
 {
 
 

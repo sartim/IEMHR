@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Pharmacy Location" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Pharmacy_Gmap.aspx.cs" Inherits="IEMHR.Pages.Pharmacy_Gmap" %>
+﻿<%@ Page Title="Pharmacy Location" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Pharmacy_Gmap.aspx.cs" Inherits="IEMHR_ASP_App.Pages.Pharmacy_Gmap" %>
 
-<%@ Register Assembly="GMaps" Namespace="Subgurim.Controles" TagPrefix="cc1" %>
+<%--<%@ Register Assembly="GMaps" Namespace="Subgurim.Controles" TagPrefix="cc1" %>--%>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
     <div>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Login Page" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="IEMHR.Login1" MasterPageFile="~/Account.Master" %>
+﻿<%@ Page Title="Login Page" Language="C#" MasterPageFile="~/Account.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="IEMHR_ASP_App.Default" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>
@@ -52,4 +52,3 @@
         </div>
      </div>
 </asp:Content>
-

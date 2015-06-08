@@ -7,16 +7,16 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace IEMHR.Pages
+namespace IEMHR_ASP_App.Pages
 {
-    public partial class Prescription_Details1 : System.Web.UI.Page
+    public partial class Prescription_Details : System.Web.UI.Page
     {
-          
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        protected void SubmitButton_Click1(object sender, EventArgs e)
+
+        protected void SubmitButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -76,6 +76,5 @@ namespace IEMHR.Pages
                 Response.Write("Error: " + ex.ToString());
             }
         }
-        
     }
 }

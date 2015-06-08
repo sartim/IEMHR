@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace IEMHR
+namespace IEMHR_ASP_App
 {
     public partial class _Default : Page
     {

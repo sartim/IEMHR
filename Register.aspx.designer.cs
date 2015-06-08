@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IEMHR {
+namespace IEMHR_ASP_App {
     
     
-    public partial class Register1 {
+    public partial class Register {
         
         /// <summary>
         /// ErrorMessage control.

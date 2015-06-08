@@ -6,9 +6,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using IEMHR.Models;
+using IEMHR_ASP_App.Models;
 
-namespace IEMHR.Models
+namespace IEMHR_ASP_App.Models
 {
     // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -42,7 +42,7 @@ namespace IEMHR.Models
 }
 
 #region Helpers
-namespace IEMHR
+namespace IEMHR_ASP_App
 {
     public static class IdentityHelper
     {

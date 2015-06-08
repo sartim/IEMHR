@@ -7,11 +7,10 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
-using IEMHR.Pages;
 
-namespace IEMHR
+namespace IEMHR_ASP_App
 {
-    public partial class Login1 : System.Web.UI.Page
+    public partial class Default : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +19,6 @@ namespace IEMHR
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
 
             userStore.Context.Database.Connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["IEMHRConnectionString"].ConnectionString;
@@ -46,7 +44,7 @@ namespace IEMHR
             }
             else
             {
-                litStatus.Text =  "Invalid username or password";
+                litStatus.Text = "Invalid username or password";
             }
         }
     }
