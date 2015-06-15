@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace IEMHR_ASP_App.Pages
+namespace IEMHR.Pages
 {
-    public partial class Patien_Reviewtaspx : System.Web.UI.Page
+    public partial class Patient_Review : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

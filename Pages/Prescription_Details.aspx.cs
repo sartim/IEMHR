@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace IEMHR_ASP_App.Pages
+namespace IEMHR.Pages
 {
     public partial class Prescription_Details : System.Web.UI.Page
     {

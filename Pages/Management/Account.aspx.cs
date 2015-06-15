@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace IEMHR_ASP_App.Pages.Management
+namespace IEMHR.Pages.Management
 {
-    public partial class Admin_Management : System.Web.UI.Page
+    public partial class Account : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

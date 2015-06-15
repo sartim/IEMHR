@@ -8,7 +8,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 
-namespace IEMHR_ASP_App
+namespace IEMHR
 {
     public partial class Register : System.Web.UI.Page
     {

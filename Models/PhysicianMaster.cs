@@ -17,10 +17,10 @@ namespace IEMHR.Models
         public PhysicianMaster()
         {
             this.PrescriptionMasters = new HashSet<PrescriptionMaster>();
-            this.TestMasters = new HashSet<TestMaster>();
+            this.ScheduleMasters = new HashSet<ScheduleMaster>();
         }
     
-        public string PhysicianId { get; set; }
+        public int PhysicianId { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
@@ -31,6 +31,6 @@ namespace IEMHR.Models
         public string Company { get; set; }
     
         public virtual ICollection<PrescriptionMaster> PrescriptionMasters { get; set; }
-        public virtual ICollection<TestMaster> TestMasters { get; set; }
+        public virtual ICollection<ScheduleMaster> ScheduleMasters { get; set; }
     }
 }

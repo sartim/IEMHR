@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace IEMHR_ASP_App.Pages
+namespace IEMHR.Pages
 {
     public partial class EHR : System.Web.UI.Page
     {

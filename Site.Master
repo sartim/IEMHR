@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="IEMHR_ASP_App.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="IEMHR.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -48,13 +48,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="Default.aspx">IEMHR</a>
+                <a class="navbar-brand" href="Home.aspx">IEMHR</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="Default.aspx">Home</a>
+                        <a href="Home.aspx">Home</a>
                     </li>
                     <li>
                         <a href="About.aspx">About</a>
@@ -69,6 +69,10 @@
 
                             <li><a href="Prescription_Review.aspx">Prescription review</a></li>
 
+                            <li><a href="Export_Prescription_Details.aspx">Export prescription details</a></li>
+
+                            <li><a href="Prescription_Report.aspx">Prescription report</a></li>
+
                                 <li class="divider"></li>
 
                             <li class="dropdown-header"><b>Pharmacy Management</b></li>
@@ -77,7 +81,9 @@
 
                             <li><a href="Pharmacy_Review.aspx">Pharmacy review</a></li>
 
-                            <li><a href="#">Pharmacy report</a></li>
+                            <li><a href="Export_Pharmacy_Details.aspx">Export pharmacy details</a></li>
+
+                            <li><a href="Pharmacy_Report.aspx">Pharmacy report</a></li>
 
                             <li><a href="#">Insurer fee schedule</a></li>
 
@@ -93,9 +99,11 @@
                             <li><a href="Patient_Details.aspx">Patient details</a></li>
 
                             <li><a href="Patient_Review.aspx">Patient review</a></li>
+                            
+                            <li><a href="Export_Patient_Details.aspx">Export patient details</a></li>
 
-                            <li><a href="#">Patient Report</a></li>
-
+                            <li><a href="Patient_Report.aspx">Patient Report</a></li>
+                        
                                 <li class="divider"></li>
 
                             <li class="dropdown-header"><b>Administrative</b></li>
@@ -118,13 +126,15 @@
 
                             <li><a href="Physician_Review.aspx">Physician review</a></li>
 
-                            <li><a href="Physician_Review.aspx">Physician report</a></li>
+                            <li><a href="Export_Physician_Details.aspx">Export physician details</a></li>
+
+                            <li><a href="Physician_Report.aspx">Physician report</a></li>
 
                                 <li class="divider"></li>
 
                             <li class="dropdown-header"><b>Scheduling Management</b></li>
 
-                            <li><a href="#">Patient scheduling</a></li>
+                            <li><a href="Patient_Schedule">Patient scheduling</a></li>
 
                             <li><a href="#">Task assignment</a></li>
 
@@ -136,13 +146,17 @@
 
                             <li class="dropdown-header"><b>Clinic Management</b></li>
 
-                            <li><a href="#">Clinic details</a></li>
+                            <li><a href="Clinic_Details.aspx">Clinic details</a></li>
 
-                            <li><a href="#">Clinic review</a></li>
+                            <li><a href="Clinic_Review.aspx">Clinic review</a></li>
+
+                            <li><a href="Export_Clinic_Details.aspx">Export clinic details</a></li>
+
+                            <li><a href="Clinic_Report.aspx">Clinic report</a></li>
                             
-                            <li><a href="#">Billing</a></li>
+                            <li><a href="Clinical_billing.aspx">Clinical billing</a></li>
 
-                            <li><a href="#">Clinical charting</a></li>
+                            <li><a href="Clinical_Charting.aspx">Clinical charting</a></li>
 
                         </ul>
                     </li>
@@ -150,14 +164,14 @@
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="Register.aspx">Register</a></li>
-                                <li><a runat="server" href="Login.aspx">Log in</a></li>
+                                <li><a runat="server" href="Default.aspx">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="#" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
-                                 <asp:LinkButton ID="LogoutLinkBtn" runat="server" OnClick="LogoutLinkBtn_Click" >Logout</asp:LinkButton>
+                                 <asp:LinkButton ID="LogoutLinkBtn" runat="server" OnClick="LogoutLinkBtn_Click">Logout</asp:LinkButton>
                                 </li>
                             </ul>
                         </LoggedInTemplate>
@@ -166,18 +180,21 @@
                     
                 </div>
             </div>
-            </nav>
+         </nav>
            
         <div class="container body-content">
+            
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                
+                |
             </asp:ContentPlaceHolder>
+            
             <hr />
+            
             <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
                 <div class="coantainer">
                     <div class="navbar-text pull-left">
                         <footer>
-                            <p>Copyright &copy; <a href="http://tymevotec.somee.com/">TYMEVOTEC</a> <%: DateTime.Now.Year %> - All rights Reserved</p>
+                            <p>&copy; <a href="http://tymevotec.somee.com/">TYMEVOTEC</a> <%: DateTime.Now.Year %> - All rights Reserved</p>
                         </footer>
                     </div>
                 </div>
@@ -186,4 +203,3 @@
     </form>
 </body>
 </html>
-

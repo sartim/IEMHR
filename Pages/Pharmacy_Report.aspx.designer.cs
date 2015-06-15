@@ -10,7 +10,7 @@
 namespace IEMHR.Pages {
     
     
-    public partial class Phamacy_Report {
+    public partial class Pharmacy_Report {
         
         /// <summary>
         /// ReportViewer1 control.

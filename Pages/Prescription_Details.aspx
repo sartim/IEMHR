@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Prescription form" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Prescription_Details.aspx.cs" Inherits="IEMHR_ASP_App.Pages.Prescription_Details" %>
+﻿<%@ Page Title="Prescription details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Prescription_Details.aspx.cs" Inherits="IEMHR.Pages.Prescription_Details" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <hgroup class="title">

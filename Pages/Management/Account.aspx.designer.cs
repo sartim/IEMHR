@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IEMHR_ASP_App.Pages.Management {
+namespace IEMHR.Pages.Management {
     
     
-    public partial class Admin_Management {
+    public partial class Account {
         
         /// <summary>
         /// GridView1 control.
@@ -22,12 +22,12 @@ namespace IEMHR_ASP_App.Pages.Management {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// AspNetUsersSqlDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource AspNetUsersSqlDataSource;
     }
 }

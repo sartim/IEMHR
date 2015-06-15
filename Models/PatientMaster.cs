@@ -16,15 +16,16 @@ namespace IEMHR.Models
     {
         public PatientMaster()
         {
-            this.PrescriptionMasters = new HashSet<PrescriptionMaster>();
+            this.ScheduleMasters = new HashSet<ScheduleMaster>();
+            this.ScheduleMasters1 = new HashSet<ScheduleMaster>();
             this.TestMasters = new HashSet<TestMaster>();
         }
     
-        public string PatientId { get; set; }
+        public int PatientId { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
-        public string Age { get; set; }
+        public int Age { get; set; }
         public string Gender { get; set; }
         public string HomeAddress { get; set; }
         public string PhoneNum { get; set; }
@@ -33,7 +34,8 @@ namespace IEMHR.Models
         public string NextOfKin { get; set; }
         public string NextOfKinContact { get; set; }
     
-        public virtual ICollection<PrescriptionMaster> PrescriptionMasters { get; set; }
+        public virtual ICollection<ScheduleMaster> ScheduleMasters { get; set; }
+        public virtual ICollection<ScheduleMaster> ScheduleMasters1 { get; set; }
         public virtual ICollection<TestMaster> TestMasters { get; set; }
     }
 }

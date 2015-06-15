@@ -7,7 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace IEMHR_ASP_App
+namespace IEMHR
 {
     public class Global : HttpApplication
     {

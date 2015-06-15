@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Pharmacy details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Pharmacy_Details.aspx.cs" Inherits="IEMHR_ASP_App.Pages.Pharmacy_Details" %>
+﻿<%@ Page Title="Pharmacy details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Pharmacy_Details.aspx.cs" Inherits="IEMHR.Pages.Pharmacy_Details" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
@@ -82,8 +82,7 @@
                     ID="SubmitButton" OnClick="SubmitButton_Click" />
             </div>
         </div>
-        <div>
-            <asp:Label ID="SubmitLabel" runat="server" Text=""></asp:Label> 
+        <div> 
         </div>
       </div>
     </div>

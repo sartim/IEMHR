@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IEMHR_ASP_App.Pages {
+namespace IEMHR.Pages {
     
     
     public partial class Patient_Details {

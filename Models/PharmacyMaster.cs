@@ -14,12 +14,7 @@ namespace IEMHR.Models
     
     public partial class PharmacyMaster
     {
-        public PharmacyMaster()
-        {
-            this.PrescriptionMasters = new HashSet<PrescriptionMaster>();
-        }
-    
-        public string PharmacyId { get; set; }
+        public int PharmacyId { get; set; }
         public string PharmacyName { get; set; }
         public string LocLat { get; set; }
         public string LocLong { get; set; }
@@ -28,7 +23,5 @@ namespace IEMHR.Models
         public string Email { get; set; }
         public string URL { get; set; }
         public string PhoneNum { get; set; }
-    
-        public virtual ICollection<PrescriptionMaster> PrescriptionMasters { get; set; }
     }
 }

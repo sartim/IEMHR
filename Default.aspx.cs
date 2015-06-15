@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,7 +10,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 
-namespace IEMHR_ASP_App
+namespace IEMHR
 {
     public partial class Default : System.Web.UI.Page
     {
@@ -40,7 +42,7 @@ namespace IEMHR_ASP_App
                 }, userIdentity);
 
                 //Redirect user to homepage
-                Response.Redirect("Pages/Default.aspx");
+                Response.Redirect("Pages/Home.aspx");
             }
             else
             {

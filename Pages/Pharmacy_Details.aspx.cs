@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace IEMHR_ASP_App.Pages
+namespace IEMHR.Pages
 {
     public partial class Pharmacy_Details : System.Web.UI.Page
     {
@@ -21,7 +21,7 @@ namespace IEMHR_ASP_App.Pages
         {
             try
             {
-                
+
                 SqlCommand cmd = new SqlCommand("INSERT INTO PharmacyMaster VALUES ('" + txtPharmacyName.Text + "', '" + txtLocLat.Text + "', '" + txtLocLon.Text + "', '" + txtLocation.Text + "', '" + txtCountry.Text + "', '" + txtEmail.Text + "', '" + txtURL.Text + "', '" + txtPhoneNum.Text + "')", dbcon);
                 cmd.ExecuteNonQuery();
                 dbcon.Close();

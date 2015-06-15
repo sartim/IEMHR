@@ -7,9 +7,9 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using IEMHR_ASP_App.Models;
+using IEMHR.Models;
 
-namespace IEMHR_ASP_App
+namespace IEMHR
 {
     public partial class Startup {
 

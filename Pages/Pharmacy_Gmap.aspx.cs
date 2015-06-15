@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace IEMHR_ASP_App.Pages
+namespace IEMHR
 {
     public partial class Pharmacy_Gmap : System.Web.UI.Page
     {

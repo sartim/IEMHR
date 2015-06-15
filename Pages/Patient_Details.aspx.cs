@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,13 +8,13 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace IEMHR_ASP_App.Pages
+namespace IEMHR.Pages
 {
     public partial class Patient_Details : System.Web.UI.Page
     {
         SqlConnection dbcon = new SqlConnection(ConfigurationManager.ConnectionStrings["IEMHRConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
-        {   
+        {
             dbcon.Open();
         }
 

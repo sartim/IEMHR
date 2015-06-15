@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
 
-namespace IEMHR_ASP_App
+namespace IEMHR
 {
     public static class RouteConfig
     {

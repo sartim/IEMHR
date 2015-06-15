@@ -20,9 +20,8 @@ namespace IEMHR.Models
         public System.DateTime SentDate { get; set; }
         public string Result { get; set; }
         public string PractitionerId { get; set; }
-        public string PatientID { get; set; }
+        public int PatientID { get; set; }
     
         public virtual PatientMaster PatientMaster { get; set; }
-        public virtual PhysicianMaster PhysicianMaster { get; set; }
     }
 }

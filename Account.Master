@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Account.master.cs" Inherits="IEMHR_ASP_App.Account" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Account.master.cs" Inherits="IEMHR.Account" %>
 
 <!DOCTYPE html>
 
@@ -61,7 +61,7 @@
                 <div class="coantainer">
                     <div class="navbar-text pull-left">
                         <footer>
-                            <p>Copyright &copy; TYMEVOTEC <%: DateTime.Now.Year %> - All rights Reserved</p>
+                            <p>&copy; <a href="http://tymevotec.somee.com/">TYMEVOTEC</a> <%: DateTime.Now.Year %> - All rights Reserved</p>
                         </footer>
                     </div>
                 </div>

@@ -6,9 +6,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using IEMHR_ASP_App.Models;
+using IEMHR.Models;
 
-namespace IEMHR_ASP_App
+namespace IEMHR
 {
     public class EmailService : IIdentityMessageService
     {

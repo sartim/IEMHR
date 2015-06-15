@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IEMHR_DB_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="PatientMaster">
+    <Key>
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HomeAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNum" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nationality" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NextOfKin" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NextOfKinContact" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ScheduleMasters" Relationship="Self.FK_ScheduleMaster_PatientMaster" FromRole="PatientMaster" ToRole="ScheduleMaster" />
+    <NavigationProperty Name="ScheduleMasters1" Relationship="Self.FK_ScheduleMaster_PatientMaster1" FromRole="PatientMaster" ToRole="ScheduleMaster" />
+    <NavigationProperty Name="TestMasters" Relationship="Self.FK_TestMaster_PatientMaster" FromRole="PatientMaster" ToRole="TestMaster" />
+  </EntityType>
+  <EntityType Name="PharmacyMaster">
+    <Key>
+      <PropertyRef Name="PharmacyId" />
+    </Key>
+    <Property Name="PharmacyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PharmacyName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LocLat" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LocLong" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNum" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhysicianMaster">
+    <Key>
+      <PropertyRef Name="PhysicianId" />
+    </Key>
+    <Property Name="PhysicianId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MPDBRegNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Company" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PrescriptionMasters" Relationship="Self.FK_PrescriptionMaster_PhysicianMaster" FromRole="PhysicianMaster" ToRole="PrescriptionMaster" />
+    <NavigationProperty Name="ScheduleMasters" Relationship="Self.FK_ScheduleMaster_PhysicianMaster" FromRole="PhysicianMaster" ToRole="ScheduleMaster" />
+  </EntityType>
+  <EntityType Name="PrescriptionMaster">
+    <Key>
+      <PropertyRef Name="PrescriptionId" />
+    </Key>
+    <Property Name="PrescriptionId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrescriberName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhysicianId" Type="Int32" Nullable="false" />
+    <Property Name="PatientName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PatientId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Diagnosis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DrugName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Dose" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DoseUnits" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Frequency" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumOfDays" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SubmitDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProcessedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Allergies" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Refills" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IssueTo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PharmacyId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PhysicianMaster" Relationship="Self.FK_PrescriptionMaster_PhysicianMaster" FromRole="PrescriptionMaster" ToRole="PhysicianMaster" />
+  </EntityType>
+  <EntityType Name="ScheduleMaster">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Task" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PatientId" Type="Int32" Nullable="false" />
+    <Property Name="PatientName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TaskDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TaskDueDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PhysicianId" Type="Int32" Nullable="false" />
+    <Property Name="PhysicianName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PatientMaster" Relationship="Self.FK_ScheduleMaster_PatientMaster" FromRole="ScheduleMaster" ToRole="PatientMaster" />
+    <NavigationProperty Name="PatientMaster1" Relationship="Self.FK_ScheduleMaster_PatientMaster1" FromRole="ScheduleMaster" ToRole="PatientMaster" />
+    <NavigationProperty Name="PhysicianMaster" Relationship="Self.FK_ScheduleMaster_PhysicianMaster" FromRole="ScheduleMaster" ToRole="PhysicianMaster" />
+  </EntityType>
+  <EntityType Name="TestMaster">
+    <Key>
+      <PropertyRef Name="TestId" />
+    </Key>
+    <Property Name="TestId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Test" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RecievedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Result" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PractitionerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PatientMaster" Relationship="Self.FK_TestMaster_PatientMaster" FromRole="TestMaster" ToRole="PatientMaster" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduleMaster_PatientMaster">
+    <End Role="PatientMaster" Type="Self.PatientMaster" Multiplicity="1" />
+    <End Role="ScheduleMaster" Type="Self.ScheduleMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientMaster">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="ScheduleMaster">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduleMaster_PatientMaster1">
+    <End Role="PatientMaster" Type="Self.PatientMaster" Multiplicity="1" />
+    <End Role="ScheduleMaster" Type="Self.ScheduleMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientMaster">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="ScheduleMaster">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestMaster_PatientMaster">
+    <End Role="PatientMaster" Type="Self.PatientMaster" Multiplicity="1" />
+    <End Role="TestMaster" Type="Self.TestMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientMaster">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="TestMaster">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PrescriptionMaster_PhysicianMaster">
+    <End Role="PhysicianMaster" Type="Self.PhysicianMaster" Multiplicity="1" />
+    <End Role="PrescriptionMaster" Type="Self.PrescriptionMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicianMaster">
+        <PropertyRef Name="PhysicianId" />
+      </Principal>
+      <Dependent Role="PrescriptionMaster">
+        <PropertyRef Name="PhysicianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduleMaster_PhysicianMaster">
+    <End Role="PhysicianMaster" Type="Self.PhysicianMaster" Multiplicity="1" />
+    <End Role="ScheduleMaster" Type="Self.ScheduleMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicianMaster">
+        <PropertyRef Name="PhysicianId" />
+      </Principal>
+      <Dependent Role="ScheduleMaster">
+        <PropertyRef Name="PhysicianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="IEMHR_DB_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="PatientMasters" EntityType="Self.PatientMaster" />
+    <EntitySet Name="PharmacyMasters" EntityType="Self.PharmacyMaster" />
+    <EntitySet Name="PhysicianMasters" EntityType="Self.PhysicianMaster" />
+    <EntitySet Name="PrescriptionMasters" EntityType="Self.PrescriptionMaster" />
+    <EntitySet Name="ScheduleMasters" EntityType="Self.ScheduleMaster" />
+    <EntitySet Name="TestMasters" EntityType="Self.TestMaster" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduleMaster_PatientMaster" Association="Self.FK_ScheduleMaster_PatientMaster">
+      <End Role="PatientMaster" EntitySet="PatientMasters" />
+      <End Role="ScheduleMaster" EntitySet="ScheduleMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduleMaster_PatientMaster1" Association="Self.FK_ScheduleMaster_PatientMaster1">
+      <End Role="PatientMaster" EntitySet="PatientMasters" />
+      <End Role="ScheduleMaster" EntitySet="ScheduleMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestMaster_PatientMaster" Association="Self.FK_TestMaster_PatientMaster">
+      <End Role="PatientMaster" EntitySet="PatientMasters" />
+      <End Role="TestMaster" EntitySet="TestMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PrescriptionMaster_PhysicianMaster" Association="Self.FK_PrescriptionMaster_PhysicianMaster">
+      <End Role="PhysicianMaster" EntitySet="PhysicianMasters" />
+      <End Role="PrescriptionMaster" EntitySet="PrescriptionMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduleMaster_PhysicianMaster" Association="Self.FK_ScheduleMaster_PhysicianMaster">
+      <End Role="PhysicianMaster" EntitySet="PhysicianMasters" />
+      <End Role="ScheduleMaster" EntitySet="ScheduleMasters" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

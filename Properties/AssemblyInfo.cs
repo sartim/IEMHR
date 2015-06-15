@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("IEMHR_ASP_App")]
+[assembly: AssemblyTitle("IEMHR")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IEMHR_ASP_App")]
+[assembly: AssemblyProduct("IEMHR")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a96c7e20-a5fa-4e04-998e-d2ee83378d2d")]
+[assembly: Guid("0a5290b7-0698-4923-a3af-c107afa458b3")]
 
 // Version information for an assembly consists of the following four values:
 //

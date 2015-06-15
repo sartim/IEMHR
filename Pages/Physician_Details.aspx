@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Physician details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Physician_Details.aspx.cs" Inherits="IEMHR_ASP_App.Pages.Physician_Details" %>
+﻿<%@ Page Title="Physician details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Physician_Details.aspx.cs" Inherits="IEMHR.Pages.Physician_Details" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <hgroup> 
