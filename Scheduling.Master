@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Scheduling.master.cs" Inherits="IEMHR.Scheduling" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+	<title></title>
+	<link href="~/Media/layout.css" rel="stylesheet" type="text/css" />
+	<link href='~/Themes/themes.css' rel="stylesheet" type="text/css" />
+	<script src="Scripts/DayPilot/modal.js" type="text/javascript"></script>
+	<script src="Scripts/DayPilot/event_handling.js" type="text/javascript"></script>
+	<script src="Scripts/jquery-1.4.1.min.js" type="text/javascript" ></script>
+	<asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+	<form runat="server">
+	<div class="page">
+		<div id="header">
+			<div class="bg-help">
+				<div class="inBox">
+					<h1 id="logo">Patient Scheduling</h1>
+					<p id="claim"><a href="Home.aspx">Go to home page>></a> </p>
+					<hr class="hidden" />
+				</div>
+			</div>
+		</div>
+		<div class="shadow"></div>
+		<div class="hideSkipLink">
+			<asp:Menu ID="NavigationMenu" runat="server" CssClass="toolbar" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" >
+				<Items>
+					<asp:MenuItem NavigateUrl="/Pages/Patient_Schedule.aspx" Text="Overview" />
+					<asp:MenuItem NavigateUrl="/Pages/Locations.aspx" Text="Locations"/>
+					<asp:MenuItem NavigateUrl="/Pages/People.aspx" Text="People"/>
+					<asp:MenuItem NavigateUrl="/Pages/Agenda.aspx" Text="Agenda"/>
+					<asp:MenuItem NavigateUrl="/Pages/Conflicts.aspx" Text="Conflicts <span id='conflicts'></span>" />
+				</Items>
+			</asp:Menu>
+		</div>
+		<div class="main">
+			<asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+		</div>
+		<div class="clear">
+		</div>
+	</div>
+	<div class="footer">
+
+	</div>
+	</form>
+</body>
+</html>

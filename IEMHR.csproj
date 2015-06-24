@@ -49,6 +49,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AspNet.ScriptManager.jQuery.2.1.4\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
     </Reference>
+    <Reference Include="DayPilot">
+      <HintPath>..\..\TutorialShiftScheduling\TutorialCS\Bin\DayPilot.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -163,6 +166,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\IEMHR_DB.mdf" />
+    <Content Include="App_Data\IEMHR_DB_log.ldf">
+      <DependentUpon>IEMHR_DB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -230,11 +237,14 @@
     <Content Include="js\contact_me.js" />
     <Content Include="js\jqBootstrapValidation.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="Media\layout.css" />
+    <Content Include="Media\layout\header-in.png" />
+    <Content Include="Media\layout\header.png" />
+    <Content Include="Media\layout\li.png" />
+    <Content Include="Media\layout\main.png" />
+    <Content Include="Media\layout\shadow.png" />
+    <Content Include="Media\linked\recur10x9.png" />
     <Content Include="Pages\About.aspx" />
-    <Content Include="App_Data\IEMHR_DB.mdf" />
-    <Content Include="App_Data\IEMHR_DB_log.ldf">
-      <DependentUpon>IEMHR_DB.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -260,11 +270,14 @@
       <DependentUpon>IEMHRModel.edmx</DependentUpon>
       <LastGenOutput>IEMHRModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Pages\Agenda.aspx" />
     <Content Include="Pages\Clinical_Billing.aspx" />
     <Content Include="Pages\Clinical_Charting.aspx" />
     <Content Include="Pages\Clinic_Details.aspx" />
     <Content Include="Pages\Clinic_Report.aspx" />
     <Content Include="Pages\Clinic_Review.aspx" />
+    <Content Include="Pages\Conflicts.aspx" />
+    <Content Include="Pages\Edit.aspx" />
     <Content Include="Pages\EHR.aspx" />
     <Content Include="Pages\EMR.aspx" />
     <Content Include="Pages\EPM.aspx" />
@@ -273,6 +286,7 @@
     <Content Include="Pages\Export_Pharmacy_Details.aspx" />
     <Content Include="Pages\Export_Physician_Details.aspx" />
     <Content Include="Pages\Export_Prescription_Details.aspx" />
+    <Content Include="Pages\Locations.aspx" />
     <Content Include="Pages\Management\Account.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -322,6 +336,10 @@
     <Content Include="font-awesome\scss\_spinning.scss" />
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
+    <Content Include="Pages\New.aspx" />
+    <Content Include="Pages\Patient_Schedule.aspx" />
+    <Content Include="Pages\People.aspx" />
+    <Content Include="Scheduling.Master" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Pages\Patient_Chart.aspx" />
     <Content Include="Pages\Patient_Details.aspx" />
@@ -340,6 +358,12 @@
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\DayPilot\event_handling.js" />
+    <Content Include="Scripts\DayPilot\modal.js" />
+    <Content Include="Scripts\DayPilot\recurrence.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -374,6 +398,35 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Styles\Blank.css" />
+    <Content Include="Styles\Layout.css" />
+    <Content Include="Themes\calendar_bronze\delete.gif" />
+    <Content Include="Themes\calendar_bronze\down.png" />
+    <Content Include="Themes\calendar_bronze\left30.gif" />
+    <Content Include="Themes\calendar_bronze\top21.gif" />
+    <Content Include="Themes\calendar_bronze\up.png" />
+    <Content Include="Themes\calendar_silver\corner20.gif" />
+    <Content Include="Themes\calendar_silver\delete.gif" />
+    <Content Include="Themes\calendar_silver\down.png" />
+    <Content Include="Themes\calendar_silver\left45.gif" />
+    <Content Include="Themes\calendar_silver\light_line_10.png" />
+    <Content Include="Themes\calendar_silver\right17.gif" />
+    <Content Include="Themes\calendar_silver\top21.gif" />
+    <Content Include="Themes\calendar_silver\up.png" />
+    <Content Include="Themes\menu_default\bg3white.png" />
+    <Content Include="Themes\menu_default\left.png" />
+    <Content Include="Themes\menu_default\right.png" />
+    <Content Include="Themes\month_silver\event20.gif" />
+    <Content Include="Themes\month_silver\light_line_10.png" />
+    <Content Include="Themes\month_silver\top20.gif" />
+    <Content Include="Themes\navigator_silver\top21.gif" />
+    <Content Include="Themes\scheduler_silver\left45.gif" />
+    <Content Include="Themes\scheduler_silver\light_line_10.png" />
+    <Content Include="Themes\scheduler_silver\top20.gif" />
+    <Content Include="Themes\scheduler_silver\tree_collapse.png" />
+    <Content Include="Themes\scheduler_silver\tree_expand.png" />
+    <Content Include="Themes\scheduler_silver\tree_nochildren.png" />
+    <Content Include="Themes\themes.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -394,6 +447,9 @@
     <Compile Include="Account.Master.designer.cs">
       <DependentUpon>Account.Master</DependentUpon>
     </Compile>
+    <Content Include="App_Code\Data\DataManager.cs" />
+    <Content Include="App_Code\Data\Db.cs" />
+    <Content Include="App_Code\Util\Modal.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -417,6 +473,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Pages\Agenda.aspx.cs">
+      <DependentUpon>Agenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agenda.aspx.designer.cs">
+      <DependentUpon>Agenda.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Clinical_Billing.aspx.cs">
       <DependentUpon>Clinical_Billing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -451,6 +514,20 @@
     </Compile>
     <Compile Include="Pages\Clinic_Review.aspx.designer.cs">
       <DependentUpon>Clinic_Review.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Conflicts.aspx.cs">
+      <DependentUpon>Conflicts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Conflicts.aspx.designer.cs">
+      <DependentUpon>Conflicts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\EHR.aspx.cs">
       <DependentUpon>EHR.aspx</DependentUpon>
@@ -567,12 +644,26 @@
     <Compile Include="Models\TestMaster.cs">
       <DependentUpon>IEMHRModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Locations.aspx.cs">
+      <DependentUpon>Locations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Locations.aspx.designer.cs">
+      <DependentUpon>Locations.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Management\Account.aspx.cs">
       <DependentUpon>Account.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Management\Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\New.aspx.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\New.aspx.designer.cs">
+      <DependentUpon>New.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Patient_Chart.aspx.cs">
       <DependentUpon>Patient_Chart.aspx</DependentUpon>
@@ -601,6 +692,20 @@
     </Compile>
     <Compile Include="Pages\Patient_Review.aspx.designer.cs">
       <DependentUpon>Patient_Review.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Patient_Schedule.aspx.cs">
+      <DependentUpon>Patient_Schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Patient_Schedule.aspx.designer.cs">
+      <DependentUpon>Patient_Schedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\People.aspx.cs">
+      <DependentUpon>People.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\People.aspx.designer.cs">
+      <DependentUpon>People.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Pharmacy_Details.aspx.cs">
       <DependentUpon>Pharmacy_Details.aspx</DependentUpon>
@@ -679,6 +784,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduling.Master.cs">
+      <DependentUpon>Scheduling.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scheduling.Master.designer.cs">
+      <DependentUpon>Scheduling.Master</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

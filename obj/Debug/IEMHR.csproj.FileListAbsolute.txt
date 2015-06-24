@@ -52,3 +52,5 @@ C:\Visual Studio Projects\IEMHR\IEMHR\obj\Debug\IEMHR.dll
 C:\Visual Studio Projects\IEMHR\IEMHR\obj\Debug\IEMHR.pdb
 C:\Visual Studio Projects\IEMHR\IEMHR\obj\Debug\RdlCompile.cache
 C:\Visual Studio Projects\IEMHR\IEMHR\obj\Debug\RdlCompile.compiled
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\DayPilot.dll
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\DayPilot.xml

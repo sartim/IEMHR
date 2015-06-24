@@ -69,7 +69,7 @@
 
                             <li><a href="Prescription_Review.aspx">Prescription review</a></li>
 
-                            <li><a href="Export_Prescription_Details.aspx">Export prescription details</a></li>
+                            <li><a href="Export_Prescription_Details.aspx">Export details</a></li>
 
                             <li><a href="Prescription_Report.aspx">Prescription report</a></li>
 
@@ -81,11 +81,9 @@
 
                             <li><a href="Pharmacy_Review.aspx">Pharmacy review</a></li>
 
-                            <li><a href="Export_Pharmacy_Details.aspx">Export pharmacy details</a></li>
+                            <li><a href="Export_Pharmacy_Details.aspx">Export details</a></li>
 
                             <li><a href="Pharmacy_Report.aspx">Pharmacy report</a></li>
-
-                            <li><a href="#">Insurer fee schedule</a></li>
 
                             <li><a href="Pharmacy_Gmap.aspx">Pharmacy Location</a></li>
                             
@@ -126,7 +124,7 @@
 
                             <li><a href="Physician_Review.aspx">Physician review</a></li>
 
-                            <li><a href="Export_Physician_Details.aspx">Export physician details</a></li>
+                            <li><a href="Export_Physician_Details.aspx">Export details</a></li>
 
                             <li><a href="Physician_Report.aspx">Physician report</a></li>
 
@@ -150,7 +148,7 @@
 
                             <li><a href="Clinic_Review.aspx">Clinic review</a></li>
 
-                            <li><a href="Export_Clinic_Details.aspx">Export clinic details</a></li>
+                            <li><a href="Export_Clinic_Details.aspx">Export details</a></li>
 
                             <li><a href="Clinic_Report.aspx">Clinic report</a></li>
                             
@@ -171,7 +169,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="#" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
-                                 <asp:LinkButton ID="LogoutLinkBtn" runat="server" OnClick="LogoutLinkBtn_Click">Logout</asp:LinkButton>
+                                 <asp:LinkButton ID="LogoutLinkBtn" runat="server" OnClick="LogoutLinkBtn_Click" >Logout</asp:LinkButton>
                                 </li>
                             </ul>
                         </LoggedInTemplate>
