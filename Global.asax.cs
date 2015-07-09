@@ -1,4 +1,7 @@
-﻿using System;
+﻿using System.Web.Mvc;
+using System.Web.Routing;
+using System.Web.Optimization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +19,10 @@ namespace IEMHR
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            AreaRegistration.RegisterAllAreas();
+            RouteConfig2.RegisterRoutes(RouteTable.Routes);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            BundleConfig2.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

@@ -26,4 +26,19 @@
                 electronically routes the prescription to the pharmacy.</li>
     </ul>
     </div>
+    <h3>Click on the buttons to use any of the features</h3>
+    <div class="bs-example">
+        <div class="btn-group-horizontal">
+        <asp:Button runat="server" Text="Prescription Management" CssClass="btn btn-default btn-lg btn-block" 
+            ID="PrescriptionManagementButton" PostBackUrl="~/Pages/Prescription_Management.aspx" />
+        <asp:Button runat="server" Text="Import/Export Prescription Detail" CssClass="btn btn-default btn-lg btn-block" 
+            ID="I_E_PrescriptionBtn" PostBackUrl="~/Pages/Export_Prescription_Details.aspx" />
+        <asp:Button runat="server" Text="Pharmacy Management" CssClass="btn btn-default btn-lg btn-block" 
+            ID="Button1" PostBackUrl="~/Pages/Pharmacy_Management.aspx" />
+        <asp:Button runat="server" Text="Import/Export Pharmacy Detail" CssClass="btn btn-default btn-lg btn-block" 
+            ID="I_E_PharmacyBtn" PostBackUrl="~/Pages/Export_Pharmacy_Details.aspx" /> 
+        <asp:Button runat="server" Text="Pharmacy Location" CssClass="btn btn-default btn-lg btn-block" 
+            ID="LocationButton" PostBackUrl="~/Pages/Pharmacy_Gmap.aspx" /> 
+        </div>
+    </div>
 </asp:Content>

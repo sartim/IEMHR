@@ -45,7 +45,7 @@ namespace IEMHR
 
                         //Log in the new user and direct to homepage
                         authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
-                        Response.Redirect("Pages/Default.aspx");
+                        Response.Redirect("Default.aspx");
                     }
                     else
                     {

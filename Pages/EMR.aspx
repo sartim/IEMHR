@@ -14,13 +14,19 @@
             over time, identify visits and screenings, monitor patients and improve 
             healthcare quality.
         </p>
+     </div>
+    <h3>Click on the buttons to use any of the features</h3>
+    <div class="bs-example">
+        <div class="btn-group-horizontal">
+        <asp:Button runat="server" Text="Patient Management" CssClass="btn btn-default btn-lg btn-block" 
+            ID="PatientManagementButton" PostBackUrl="~/Pages/Patient_Management.aspx" />
+        <asp:Button runat="server" Text="Patient Chart" CssClass="btn btn-default btn-lg btn-block" 
+            ID="PatientChartButton" PostBackUrl="~/Pages/Patient_Chart.aspx" />
+        <asp:Button runat="server" Text="Import/Export" CssClass="btn btn-default btn-lg btn-block" 
+            ID="ImportExportButton" PostBackUrl="~/Pages/Export_Patient_Details.aspx" />
             
-            <h1>Features</h1>
-        <ul>
-            <li>Billing System Integration</li>
-            <li>Automatic Reminder</li>
-            <li>Document Scanning</li>
-            <li>Medication Tracking</li>
-    </ul>
+        </div>
     </div>
+
+
 </asp:Content>

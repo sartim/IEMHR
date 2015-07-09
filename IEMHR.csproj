@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=15.1.1.100, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\TIM\AppData\Local\Microsoft\VisualStudio\12.0\Extensions\hbtrb0ni.zme\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
@@ -123,6 +127,30 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -253,39 +281,21 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Icon.png" />
     <Content Include="packages.config" />
-    <EntityDeploy Include="Models\IEMHRModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>IEMHRModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\IEMHRModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>IEMHRModel.edmx</DependentUpon>
-      <LastGenOutput>IEMHRModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\IEMHRModel.edmx.diagram">
-      <DependentUpon>IEMHRModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\IEMHRModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>IEMHRModel.edmx</DependentUpon>
-      <LastGenOutput>IEMHRModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Pages\Agenda.aspx" />
     <Content Include="Pages\Clinical_Billing.aspx" />
-    <Content Include="Pages\Clinical_Charting.aspx" />
-    <Content Include="Pages\Clinic_Details.aspx" />
-    <Content Include="Pages\Clinic_Report.aspx" />
-    <Content Include="Pages\Clinic_Review.aspx" />
+    <Content Include="Pages\Clinic_Management.aspx" />
     <Content Include="Pages\Conflicts.aspx" />
     <Content Include="Pages\Edit.aspx" />
     <Content Include="Pages\EHR.aspx" />
     <Content Include="Pages\EMR.aspx" />
     <Content Include="Pages\EPM.aspx" />
     <Content Include="Pages\Export_Clinic_Details.aspx" />
+    <Content Include="Pages\Export_Hospital_Details.aspx" />
     <Content Include="Pages\Export_Patient_Details.aspx" />
     <Content Include="Pages\Export_Pharmacy_Details.aspx" />
     <Content Include="Pages\Export_Physician_Details.aspx" />
     <Content Include="Pages\Export_Prescription_Details.aspx" />
+    <Content Include="Pages\Hospital_Management.aspx" />
     <Content Include="Pages\Locations.aspx" />
     <Content Include="Pages\Management\Account.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -295,17 +305,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Account.Master" />
-    <Content Include="Dataset\IEMHR_DB_DataSet.xsc">
-      <DependentUpon>IEMHR_DB_DataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="Dataset\IEMHR_DB_DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>IEMHR_DB_DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Dataset\IEMHR_DB_DataSet.xss">
-      <DependentUpon>IEMHR_DB_DataSet.xsd</DependentUpon>
-    </Content>
     <Content Include="font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.woff" />
@@ -337,23 +336,43 @@
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
     <Content Include="Pages\New.aspx" />
+    <Content Include="Pages\Patient_Management.aspx" />
     <Content Include="Pages\Patient_Schedule.aspx" />
     <Content Include="Pages\People.aspx" />
+    <Content Include="Pages\Pharmacy_Management.aspx" />
+    <Content Include="Pages\Physician_Management.aspx" />
+    <Content Include="Pages\Prescription_Management.aspx" />
     <Content Include="Scheduling.Master" />
+    <Content Include="Dataset\IEMHR_DB_DataSet.xsc">
+      <DependentUpon>IEMHR_DB_DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Dataset\IEMHR_DB_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IEMHR_DB_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Dataset\IEMHR_DB_DataSet.xss">
+      <DependentUpon>IEMHR_DB_DataSet.xsd</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\IEMHRModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IEMHRModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\IEMHRModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IEMHRModel.edmx</DependentUpon>
+      <LastGenOutput>IEMHRModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\IEMHRModel.edmx.diagram">
+      <DependentUpon>IEMHRModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\IEMHRModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IEMHRModel.edmx</DependentUpon>
+      <LastGenOutput>IEMHRModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Pages\Patient_Chart.aspx" />
-    <Content Include="Pages\Patient_Details.aspx" />
-    <Content Include="Pages\Patient_Report.aspx" />
-    <Content Include="Pages\Patient_Review.aspx" />
-    <Content Include="Pages\Pharmacy_Details.aspx" />
-    <Content Include="Pages\Pharmacy_Report.aspx" />
-    <Content Include="Pages\Pharmacy_Review.aspx" />
-    <Content Include="Pages\Physician_Details.aspx" />
-    <Content Include="Pages\Physician_Report.aspx" />
-    <Content Include="Pages\Physician_Review.aspx" />
-    <Content Include="Pages\Prescription_Details.aspx" />
-    <Content Include="Pages\Prescription_Review.aspx" />
-    <Content Include="Pages\Prescription_Report.aspx" />
     <Content Include="Pages\Pharmacy_Gmap.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -366,6 +385,11 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\respond.js" />
@@ -451,6 +475,14 @@
     <Content Include="App_Code\Data\Db.cs" />
     <Content Include="App_Code\Util\Modal.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig2.cs" />
+    <Compile Include="Dataset\IEMHR_DB_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IEMHR_DB_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -458,10 +490,74 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Dataset\IEMHR_DB_DataSet.Designer.cs">
+    <Compile Include="Models\AspNetReset.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Assignment.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClinicMaster.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HospitalMaster.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IEMHRModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IEMHR_DB_DataSet.xsd</DependentUpon>
+      <DependentUpon>IEMHRModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IEMHRModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IEMHRModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IEMHRModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Location.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PatientMaster.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Person.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PharmacyMaster.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhysicianMaster.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PrescriptionMaster.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ScheduleMaster.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TestMaster.cs">
+      <DependentUpon>IEMHRModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -487,33 +583,12 @@
     <Compile Include="Pages\Clinical_Billing.aspx.designer.cs">
       <DependentUpon>Clinical_Billing.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Clinical_Charting.aspx.cs">
-      <DependentUpon>Clinical_Charting.aspx</DependentUpon>
+    <Compile Include="Pages\Clinic_Management.aspx.cs">
+      <DependentUpon>Clinic_Management.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Clinical_Charting.aspx.designer.cs">
-      <DependentUpon>Clinical_Charting.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Clinic_Details.aspx.cs">
-      <DependentUpon>Clinic_Details.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Clinic_Details.aspx.designer.cs">
-      <DependentUpon>Clinic_Details.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Clinic_Report.aspx.cs">
-      <DependentUpon>Clinic_Report.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Clinic_Report.aspx.designer.cs">
-      <DependentUpon>Clinic_Report.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Clinic_Review.aspx.cs">
-      <DependentUpon>Clinic_Review.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Clinic_Review.aspx.designer.cs">
-      <DependentUpon>Clinic_Review.aspx</DependentUpon>
+    <Compile Include="Pages\Clinic_Management.aspx.designer.cs">
+      <DependentUpon>Clinic_Management.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Conflicts.aspx.cs">
       <DependentUpon>Conflicts.aspx</DependentUpon>
@@ -557,6 +632,13 @@
     <Compile Include="Pages\Export_Clinic_Details.aspx.designer.cs">
       <DependentUpon>Export_Clinic_Details.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Export_Hospital_Details.aspx.cs">
+      <DependentUpon>Export_Hospital_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Export_Hospital_Details.aspx.designer.cs">
+      <DependentUpon>Export_Hospital_Details.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Export_Patient_Details.aspx.cs">
       <DependentUpon>Export_Patient_Details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -595,54 +677,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AspNetRole.cs">
-      <DependentUpon>IEMHRModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUser.cs">
-      <DependentUpon>IEMHRModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserClaim.cs">
-      <DependentUpon>IEMHRModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserLogin.cs">
-      <DependentUpon>IEMHRModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\C__MigrationHistory.cs">
-      <DependentUpon>IEMHRModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\IEMHRModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IEMHRModel.Context.tt</DependentUpon>
+    <Compile Include="Pages\Hospital_Management.aspx.cs">
+      <DependentUpon>Hospital_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Models\IEMHRModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IEMHRModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\IEMHRModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IEMHRModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PatientMaster.cs">
-      <DependentUpon>IEMHRModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PharmacyMaster.cs">
-      <DependentUpon>IEMHRModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PhysicianMaster.cs">
-      <DependentUpon>IEMHRModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PrescriptionMaster.cs">
-      <DependentUpon>IEMHRModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ScheduleMaster.cs">
-      <DependentUpon>IEMHRModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TestMaster.cs">
-      <DependentUpon>IEMHRModel.tt</DependentUpon>
+    <Compile Include="Pages\Hospital_Management.aspx.designer.cs">
+      <DependentUpon>Hospital_Management.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Locations.aspx.cs">
       <DependentUpon>Locations.aspx</DependentUpon>
@@ -672,26 +713,12 @@
     <Compile Include="Pages\Patient_Chart.aspx.designer.cs">
       <DependentUpon>Patient_Chart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Patient_Details.aspx.cs">
-      <DependentUpon>Patient_Details.aspx</DependentUpon>
+    <Compile Include="Pages\Patient_Management.aspx.cs">
+      <DependentUpon>Patient_Management.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Patient_Details.aspx.designer.cs">
-      <DependentUpon>Patient_Details.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Patient_Report.aspx.cs">
-      <DependentUpon>Patient_Report.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Patient_Report.aspx.designer.cs">
-      <DependentUpon>Patient_Report.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Patient_Review.aspx.cs">
-      <DependentUpon>Patient_Review.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Patient_Review.aspx.designer.cs">
-      <DependentUpon>Patient_Review.aspx</DependentUpon>
+    <Compile Include="Pages\Patient_Management.aspx.designer.cs">
+      <DependentUpon>Patient_Management.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Patient_Schedule.aspx.cs">
       <DependentUpon>Patient_Schedule.aspx</DependentUpon>
@@ -707,68 +734,26 @@
     <Compile Include="Pages\People.aspx.designer.cs">
       <DependentUpon>People.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Pharmacy_Details.aspx.cs">
-      <DependentUpon>Pharmacy_Details.aspx</DependentUpon>
+    <Compile Include="Pages\Pharmacy_Management.aspx.cs">
+      <DependentUpon>Pharmacy_Management.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Pharmacy_Details.aspx.designer.cs">
-      <DependentUpon>Pharmacy_Details.aspx</DependentUpon>
+    <Compile Include="Pages\Pharmacy_Management.aspx.designer.cs">
+      <DependentUpon>Pharmacy_Management.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Pharmacy_Report.aspx.cs">
-      <DependentUpon>Pharmacy_Report.aspx</DependentUpon>
+    <Compile Include="Pages\Physician_Management.aspx.cs">
+      <DependentUpon>Physician_Management.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Pharmacy_Report.aspx.designer.cs">
-      <DependentUpon>Pharmacy_Report.aspx</DependentUpon>
+    <Compile Include="Pages\Physician_Management.aspx.designer.cs">
+      <DependentUpon>Physician_Management.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Pharmacy_Review.aspx.cs">
-      <DependentUpon>Pharmacy_Review.aspx</DependentUpon>
+    <Compile Include="Pages\Prescription_Management.aspx.cs">
+      <DependentUpon>Prescription_Management.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Pharmacy_Review.aspx.designer.cs">
-      <DependentUpon>Pharmacy_Review.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Physician_Details.aspx.cs">
-      <DependentUpon>Physician_Details.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Physician_Details.aspx.designer.cs">
-      <DependentUpon>Physician_Details.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Physician_Report.aspx.cs">
-      <DependentUpon>Physician_Report.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Physician_Report.aspx.designer.cs">
-      <DependentUpon>Physician_Report.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Physician_Review.aspx.cs">
-      <DependentUpon>Physician_Review.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Physician_Review.aspx.designer.cs">
-      <DependentUpon>Physician_Review.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Prescription_Details.aspx.cs">
-      <DependentUpon>Prescription_Details.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Prescription_Details.aspx.designer.cs">
-      <DependentUpon>Prescription_Details.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Prescription_Review.aspx.cs">
-      <DependentUpon>Prescription_Review.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Prescription_Review.aspx.designer.cs">
-      <DependentUpon>Prescription_Review.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Prescription_Report.aspx.cs">
-      <DependentUpon>Prescription_Report.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Prescription_Report.aspx.designer.cs">
-      <DependentUpon>Prescription_Report.aspx</DependentUpon>
+    <Compile Include="Pages\Prescription_Management.aspx.designer.cs">
+      <DependentUpon>Prescription_Management.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Pharmacy_Gmap.aspx.cs">
       <DependentUpon>Pharmacy_Gmap.aspx</DependentUpon>
@@ -820,6 +805,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Pages\rdlc\Clinic_Details_Report.rdlc" />
+    <EmbeddedResource Include="Pages\rdlc\Hospital_Details_Report.rdlc" />
+    <EmbeddedResource Include="Pages\rdlc\PatientChartReport.rdlc" />
     <EmbeddedResource Include="Pages\rdlc\Patient_Details_Report.rdlc" />
     <EmbeddedResource Include="Pages\rdlc\Pharmacy_Details_Report.rdlc" />
     <EmbeddedResource Include="Pages\rdlc\Physicain_Details_Report.rdlc" />

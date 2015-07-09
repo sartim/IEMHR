@@ -4,26 +4,33 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b41b2e5fb89f4860a57868f3a8680f1f" Name="Diagram1">
-        <EntityTypeShape EntityType="IEMHR_DB_Model.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="IEMHR_DB_Model.AspNetRole" Width="1.5" PointX="5.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="IEMHR_DB_Model.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="IEMHR_DB_Model.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="IEMHR_DB_Model.AspNetUser" Width="1.5" PointX="8" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="IEMHR_DB_Model.PatientMaster" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="IEMHR_DB_Model.PharmacyMaster" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="IEMHR_DB_Model.PhysicianMaster" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="IEMHR_DB_Model.PrescriptionMaster" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="IEMHR_DB_Model.ScheduleMaster" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="IEMHR_DB_Model.TestMaster" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
-        <AssociationConnector Association="IEMHR_DB_Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="IEMHR_DB_Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="IEMHR_DB_Model.FK_ScheduleMaster_PatientMaster" ManuallyRouted="false" />
-        <AssociationConnector Association="IEMHR_DB_Model.FK_ScheduleMaster_PatientMaster1" ManuallyRouted="false" />
-        <AssociationConnector Association="IEMHR_DB_Model.FK_TestMaster_PatientMaster" ManuallyRouted="false" />
-        <AssociationConnector Association="IEMHR_DB_Model.FK_PrescriptionMaster_PhysicianMaster" ManuallyRouted="false" />
-        <AssociationConnector Association="IEMHR_DB_Model.FK_ScheduleMaster_PhysicianMaster" ManuallyRouted="false" />
-        <AssociationConnector Association="IEMHR_DB_Model.AspNetUserRoles" ManuallyRouted="false" />
+      <Diagram DiagramId="59ed4a873d7c48e198d6c632c293549f" Name="Diagram1">
+        <EntityTypeShape EntityType="IEMHR_DBModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.AspNetReset" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.AspNetRole" Width="1.5" PointX="5.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.AspNetUser" Width="1.5" PointX="8" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.Assignment" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.ClinicMaster" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.HospitalMaster" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.Location" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.PatientMaster" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.Person" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.PharmacyMaster" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.PhysicianMaster" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.PrescriptionMaster" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.ScheduleMaster" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.sysdiagram" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEMHR_DBModel.TestMaster" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_ScheduleMaster_PatientMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_ScheduleMaster_PatientMaster1" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_TestMaster_PatientMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_PrescriptionMaster_PhysicianMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.FK_ScheduleMaster_PhysicianMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="IEMHR_DBModel.AspNetUserRoles" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

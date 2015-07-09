@@ -13,13 +13,24 @@
             be used to share information with other healthcare providers, such as laboratories and specialists.
 
         </p>
-            
-            <h1>Features</h1>
-        <ul>
-            <li>Billing System Integration</li>
-            <li>Automatic Reminder</li>
-            <li>Document Scanning</li>
-            <li>Medication Tracking</li>
-    </ul>
+    </div>
+    <h3>Click on the buttons to use any of the features</h3>
+    <div class="bs-example">
+        <div class="btn-group-horizontal">
+        <asp:Button runat="server" Text="Patient Scheduling" CssClass="btn btn-default btn-lg btn-block" 
+            ID="PatientSchedulingButton" PostBackUrl="~/Pages/Patient_Schedule.aspx" />
+        <asp:Button runat="server" Text="Physician Management" CssClass="btn btn-default btn-lg btn-block" 
+            ID="PhysicianManagementButton" PostBackUrl="~/Pages/Physician_Management.aspx" />
+        <asp:Button runat="server" Text="Import/Export Physician Details" CssClass="btn btn-default btn-lg btn-block" 
+            ID="I_E_PhysicianBtn" PostBackUrl="~/Pages/Export_Physician_Details.aspx" /> 
+        <asp:Button runat="server" Text="Clinic Management" CssClass="btn btn-default btn-lg btn-block" 
+            ID="ClinicManagementButton" PostBackUrl="~/Pages/Clinic_Management.aspx" /> 
+        <asp:Button runat="server" Text="Import/Export Clinic Details" CssClass="btn btn-default btn-lg btn-block" 
+            ID="I_E_ClinicBtn" PostBackUrl="~/Pages/Export_Clinic_Details.aspx" /> 
+        <asp:Button runat="server" Text="Hospital Management" CssClass="btn btn-default btn-lg btn-block" 
+            ID="HospitalManagementButton" PostBackUrl="~/Pages/Hospital_Management.aspx" /> 
+        <asp:Button runat="server" Text="Import/Export Hospital Detail" CssClass="btn btn-default btn-lg btn-block" 
+            ID="I_E_HospitalBtn" PostBackUrl="~/Pages/Export_Hospital_Details.aspx" />
+        </div>
     </div>
 </asp:Content>

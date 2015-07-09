@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="IEMHR_DB_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="IEMHR_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="C__MigrationHistory">
     <Key>
       <PropertyRef Name="MigrationId" />
@@ -9,6 +9,15 @@
     <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
     <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetReset">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ResetRequestDateTime" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <EntityType Name="AspNetRole">
     <Key>
@@ -59,6 +68,55 @@
     <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
     <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
   </EntityType>
+  <EntityType Name="Assignment">
+    <Key>
+      <PropertyRef Name="AssignmentId" />
+    </Key>
+    <Property Name="AssignmentId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationId" Type="Int64" Nullable="false" />
+    <Property Name="PersonId" Type="Int64" Nullable="false" />
+    <Property Name="AssignmentNote" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="AssignmentStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AssignmentEnd" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AssignmentRecurrence" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ClinicMaster">
+    <Key>
+      <PropertyRef Name="ClinicId" />
+    </Key>
+    <Property Name="ClinicId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClinicName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Latitude" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Longitude" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNum" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HospitalMaster">
+    <Key>
+      <PropertyRef Name="HospitalId" />
+    </Key>
+    <Property Name="HospitalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HospitalName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Latitude" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Longitude" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNum" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
   <EntityType Name="PatientMaster">
     <Key>
       <PropertyRef Name="PatientId" />
@@ -67,7 +125,7 @@
     <Property Name="FirstName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="MiddleName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="LastName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Age" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Gender" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="HomeAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="PhoneNum" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
@@ -78,6 +136,15 @@
     <NavigationProperty Name="ScheduleMasters" Relationship="Self.FK_ScheduleMaster_PatientMaster" FromRole="PatientMaster" ToRole="ScheduleMaster" />
     <NavigationProperty Name="ScheduleMasters1" Relationship="Self.FK_ScheduleMaster_PatientMaster1" FromRole="PatientMaster" ToRole="ScheduleMaster" />
     <NavigationProperty Name="TestMasters" Relationship="Self.FK_TestMaster_PatientMaster" FromRole="PatientMaster" ToRole="TestMaster" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="PersonId" />
+    </Key>
+    <Property Name="PersonId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonFirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PersonLastName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PersonFullName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="PharmacyMaster">
     <Key>
@@ -113,7 +180,7 @@
     <Key>
       <PropertyRef Name="PrescriptionId" />
     </Key>
-    <Property Name="PrescriptionId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrescriptionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PrescriberName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="PhysicianId" Type="Int32" Nullable="false" />
     <Property Name="PatientName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
@@ -124,13 +191,13 @@
     <Property Name="DoseUnits" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Frequency" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="NumOfDays" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SubmitDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="ProcessedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SubmitDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ProcessedDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Allergies" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="Comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Refills" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IssueTo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="PharmacyId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PharmacyId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="PhysicianMaster" Relationship="Self.FK_PrescriptionMaster_PhysicianMaster" FromRole="PrescriptionMaster" ToRole="PhysicianMaster" />
   </EntityType>
   <EntityType Name="ScheduleMaster">
@@ -148,6 +215,16 @@
     <NavigationProperty Name="PatientMaster" Relationship="Self.FK_ScheduleMaster_PatientMaster" FromRole="ScheduleMaster" ToRole="PatientMaster" />
     <NavigationProperty Name="PatientMaster1" Relationship="Self.FK_ScheduleMaster_PatientMaster1" FromRole="ScheduleMaster" ToRole="PatientMaster" />
     <NavigationProperty Name="PhysicianMaster" Relationship="Self.FK_ScheduleMaster_PhysicianMaster" FromRole="ScheduleMaster" ToRole="PhysicianMaster" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="TestMaster">
     <Key>
@@ -256,15 +333,22 @@
   </Association>
   <EntityContainer Name="IEMHR_DB_Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AspNetResets" EntityType="Self.AspNetReset" />
     <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
     <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
     <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="Assignments" EntityType="Self.Assignment" />
+    <EntitySet Name="ClinicMasters" EntityType="Self.ClinicMaster" />
+    <EntitySet Name="HospitalMasters" EntityType="Self.HospitalMaster" />
+    <EntitySet Name="Locations" EntityType="Self.Location" />
     <EntitySet Name="PatientMasters" EntityType="Self.PatientMaster" />
+    <EntitySet Name="People" EntityType="Self.Person" />
     <EntitySet Name="PharmacyMasters" EntityType="Self.PharmacyMaster" />
     <EntitySet Name="PhysicianMasters" EntityType="Self.PhysicianMaster" />
     <EntitySet Name="PrescriptionMasters" EntityType="Self.PrescriptionMaster" />
     <EntitySet Name="ScheduleMasters" EntityType="Self.ScheduleMaster" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="TestMasters" EntityType="Self.TestMaster" />
     <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />

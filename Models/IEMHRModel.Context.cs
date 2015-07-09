@@ -26,15 +26,22 @@ namespace IEMHR.Models
         }
     
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<AspNetReset> AspNetResets { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<Assignment> Assignments { get; set; }
+        public virtual DbSet<ClinicMaster> ClinicMasters { get; set; }
+        public virtual DbSet<HospitalMaster> HospitalMasters { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<PatientMaster> PatientMasters { get; set; }
+        public virtual DbSet<Person> People { get; set; }
         public virtual DbSet<PharmacyMaster> PharmacyMasters { get; set; }
         public virtual DbSet<PhysicianMaster> PhysicianMasters { get; set; }
         public virtual DbSet<PrescriptionMaster> PrescriptionMasters { get; set; }
         public virtual DbSet<ScheduleMaster> ScheduleMasters { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TestMaster> TestMasters { get; set; }
     }
 }

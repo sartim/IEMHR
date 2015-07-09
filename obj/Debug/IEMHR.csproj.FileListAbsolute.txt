@@ -54,3 +54,16 @@ C:\Visual Studio Projects\IEMHR\IEMHR\obj\Debug\RdlCompile.cache
 C:\Visual Studio Projects\IEMHR\IEMHR\obj\Debug\RdlCompile.compiled
 C:\Visual Studio Projects\IEMHR\IEMHR\bin\DayPilot.dll
 C:\Visual Studio Projects\IEMHR\IEMHR\bin\DayPilot.xml
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\System.Web.Helpers.dll
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\System.Web.Mvc.dll
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\System.Web.Razor.dll
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\System.Web.WebPages.Deployment.dll
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\System.Web.WebPages.dll
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\System.Web.WebPages.Razor.dll
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\System.Web.Helpers.xml
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\System.Web.Mvc.xml
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\System.Web.Razor.xml
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\System.Web.WebPages.xml
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\System.Web.WebPages.Deployment.xml
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\System.Web.WebPages.Razor.xml
+C:\Visual Studio Projects\IEMHR\IEMHR\bin\AjaxControlToolkit.dll

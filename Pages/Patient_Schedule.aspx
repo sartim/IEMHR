@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Scheduling.Master" AutoEventWireup="true" CodeBehind="Patient_Schedule.aspx.cs" Inherits="IEMHR.Pages.Patient_Schedule" %>
+﻿<%@ Page Title="Patient Scheduling" Language="C#" MasterPageFile="~/Scheduling.Master" AutoEventWireup="true" CodeBehind="Patient_Schedule.aspx.cs" Inherits="IEMHR.Pages.Patient_Schedule" %>
 
 <%@ Register Assembly="DayPilot" Namespace="DayPilot.Web.Ui" TagPrefix="DayPilot" %>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">

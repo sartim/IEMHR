@@ -6,13 +6,13 @@
     
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" CellPadding="5" CssClass="myGrid" AlternatingRowStyle-CssClass="alt">
         <Columns>
-            <asp:BoundField HeaderText="Physician Id" DataField="PrescriptionId " />
+            <asp:BoundField HeaderText="Physician Id" DataField="PhysicianId" />
             <asp:BoundField HeaderText="First Name" DataField="FirstName" />
             <asp:BoundField HeaderText="Middle Name" DataField="MiddleName" />
             <asp:BoundField HeaderText="Last Name" DataField="LastName" />
             <asp:BoundField HeaderText="Email" DataField="Email" />
             <asp:BoundField HeaderText="Phone Number" DataField="PhoneNo" />
-            <asp:BoundField HeaderText="MPDB Reg Number" DataField="MPDBRegNoe" />
+            <asp:BoundField HeaderText="MPDB Reg Number" DataField="MPDBRegNo" />
             <asp:BoundField HeaderText="Designation" DataField="Designation" />
             <asp:BoundField HeaderText="Company" DataField="Company" />
         </Columns>

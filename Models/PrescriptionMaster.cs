@@ -14,7 +14,7 @@ namespace IEMHR.Models
     
     public partial class PrescriptionMaster
     {
-        public string PrescriptionId { get; set; }
+        public int PrescriptionId { get; set; }
         public string PrescriberName { get; set; }
         public int PhysicianId { get; set; }
         public string PatientName { get; set; }
@@ -31,7 +31,7 @@ namespace IEMHR.Models
         public string Comments { get; set; }
         public string Refills { get; set; }
         public string IssueTo { get; set; }
-        public string PharmacyId { get; set; }
+        public int PharmacyId { get; set; }
     
         public virtual PhysicianMaster PhysicianMaster { get; set; }
     }
