@@ -194,6 +194,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
     <Content Include="App_Data\IEMHR_DB.mdf" />
     <Content Include="App_Data\IEMHR_DB_log.ldf">
       <DependentUpon>IEMHR_DB.mdf</DependentUpon>
@@ -260,6 +261,7 @@
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Forgot.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\contact_me.js" />
@@ -489,6 +491,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetReset.cs">
       <DependentUpon>IEMHRModel.tt</DependentUpon>

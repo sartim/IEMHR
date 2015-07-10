@@ -96,7 +96,6 @@
                         </LoggedInTemplate>
                     </asp:LoginView>
                 </ul>
-                    
                 </div>
             </div>
          </nav>
@@ -109,7 +108,7 @@
             
             <hr />
             
-            <div class="navbar navbar-inverse navbar-fluid-bottom" role="navigation">
+            <div class="navbar navbar-default navbar-fluid-bottom" role="navigation">
                 <div class="coantainer">
                     <div class="navbar-text pull-left">
                         <footer>

@@ -48,7 +48,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">IEMHR</a>
+                <a class="navbar-brand" href="Pages/Home.aspx">IEMHR</a>
             </div>
         </div>
         </nav>
@@ -57,7 +57,7 @@
                 
             </asp:ContentPlaceHolder>
             <hr />
-            <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+            <div class="navbar navbar-default navbar-fluid-bottom" role="navigation">
                 <div class="coantainer">
                     <div class="navbar-text pull-left">
                         <footer>
