@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
-    <link href="../css/myGrid.css" rel="stylesheet" />
+   <link href="../assets/css/myGrid.css" rel="stylesheet" />
     
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" CellPadding="5" CssClass="myGrid" AlternatingRowStyle-CssClass="alt">
         <Columns>

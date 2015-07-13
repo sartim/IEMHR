@@ -13,15 +13,6 @@ namespace IEMHR.Pages {
     public partial class EHR {
         
         /// <summary>
-        /// PatientSchedulingButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PatientSchedulingButton;
-        
-        /// <summary>
         /// PhysicianManagementButton control.
         /// </summary>
         /// <remarks>

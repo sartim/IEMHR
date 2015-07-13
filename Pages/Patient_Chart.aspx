@@ -5,7 +5,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div>
 
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" BorderStyle="Outset" Font-Names="Verdana" Font-Size="8pt" Height="559px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="1162px">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" BorderStyle="Outset" Font-Names="Verdana" Font-Size="8pt" Height="559px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
             <LocalReport ReportPath="Pages\rdlc\PatientChartReport.rdlc">
                 <DataSources>
                     <rsweb:ReportDataSource DataSourceId="PatientSqlDataSource" Name="IEMHRDataSet" />

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,7 +17,7 @@ namespace IEMHR
 
         }
 
-        protected void LoginButton_Click(object sender, EventArgs e)
+        protected void SigninButton_Click(object sender, System.EventArgs e)
         {
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
 
@@ -46,7 +44,7 @@ namespace IEMHR
             }
             else
             {
-                litStatus.Text = "Invalid username or password";
+                litStatus.Text = "Invalid Credentials!";;
             }
         }
     }

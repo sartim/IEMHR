@@ -212,7 +212,7 @@
         <div id="sectionC" class="tab-pane fade">
             <h3>Patient report</h3>
             <p>
-                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="545px" Width="1162px" BorderStyle="Outset">
+                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="545px" Width="100%" BorderStyle="Outset">
                 <LocalReport ReportPath="Pages\rdlc\Patient_Details_Report.rdlc">
                 <DataSources>
                 <rsweb:ReportDataSource DataSourceId="PatientSqlDataSource" Name="IEMHREDataSet" />

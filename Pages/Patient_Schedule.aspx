@@ -54,5 +54,43 @@
         </DayPilot:DayPilotMenu>
 
     </div>
+    
+    <div class="daypilot-main">
+
+        <DayPilot:DayPilotCalendar 
+            ID="DayPilotCalendar1" 
+            runat="server" 
+            DataEndField="AssignmentEnd"
+            DataStartField="AssignmentStart" 
+            DataTextField="AssignmentNote" 
+            DataValueField="AssignmentId" 
+            DataRecurrenceField="AssignmentRecurrence"
+            ViewType="Week"
+            EventMoveHandling="CallBack"
+            ContextMenuID="DayPilotMenu1" 
+            EventResizeHandling="CallBack"
+            TimeRangeSelectedHandling="JavaScript"
+            TimeRangeSelectedJavaScript="timeRangeSelected(start, end, $('#MainContent_DropDownListLocation').val());"
+            EventClickHandling="JavaScript" 
+            EventClickJavaScript="eventClick(e);"
+            ClientObjectName="dp" 
+            EventDeleteHandling="JavaScript"
+            ShowEventStartEnd="false"
+            EventDeleteJavaScript="if (confirm('Do you really want to delete this assignment?')) dp.eventDeleteCallBack(e);"
+
+            HeaderHeight="40"
+            HeaderDateFormat="dddd<br/>d/M/yyyy"
+            AfterRenderJavaScript="afterRender();"
+
+        />
+
+        <DayPilot:DayPilotMenu ID="DayPilotMenu2" runat="server" CssClassPrefix="menu_">
+            <DayPilot:MenuItem Text="Edit..." Action="PostBack" Command="Open"></DayPilot:MenuItem>
+            <DayPilot:MenuItem Text="-" Action="NavigateUrl"></DayPilot:MenuItem>
+            <DayPilot:MenuItem Text="Delete" Action="Callback" Command="Delete"></DayPilot:MenuItem>
+        </DayPilot:DayPilotMenu>
+
+    </div>
+
 
 </asp:Content>

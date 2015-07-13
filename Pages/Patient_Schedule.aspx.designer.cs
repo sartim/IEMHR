@@ -38,5 +38,23 @@ namespace IEMHR.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DayPilot.Web.Ui.DayPilotMenu DayPilotMenu1;
+        
+        /// <summary>
+        /// DayPilotCalendar1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DayPilot.Web.Ui.DayPilotCalendar DayPilotCalendar1;
+        
+        /// <summary>
+        /// DayPilotMenu2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DayPilot.Web.Ui.DayPilotMenu DayPilotMenu2;
     }
 }

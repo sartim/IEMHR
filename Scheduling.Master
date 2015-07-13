@@ -1,18 +1,112 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Scheduling.master.cs" Inherits="IEMHR.Scheduling" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+
+<html lang="en">
 <head runat="server">
-	<title></title>
-	<link href="~/Media/layout.css" rel="stylesheet" type="text/css" />
-	<link href='~/Themes/themes.css' rel="stylesheet" type="text/css" />
-	<script src="Scripts/DayPilot/modal.js" type="text/javascript"></script>
-	<script src="Scripts/DayPilot/event_handling.js" type="text/javascript"></script>
-	<script src="Scripts/jquery-1.4.1.min.js" type="text/javascript" ></script>
+	<title><%: Page.Title %></title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+	<link href="~/assets/Media/layout.css" rel="stylesheet" type="text/css" />
+	<link href='~/assets/Themes/themes.css' rel="stylesheet" type="text/css" />
+	<script src="/Scripts/DayPilot/modal.js" type="text/javascript"></script>
+	<script src="/Scripts/DayPilot/event_handling.js" type="text/javascript"></script>
+	<script src="/Scripts/jquery-1.4.1.min.js" type="text/javascript" ></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/assets/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style type="text/css">
+	    .bs-example{
+		    margin: 20px;
+	    }
+    </style>
+
 	<asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+
 </head>
 <body>
 	<form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="Home.aspx">IEMHR</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="Home.aspx">Home</a>
+                    </li>
+                    <li>
+                        <a href="About.aspx">About</a>
+                    </li>
+                        <li>
+                        <a href="EPM.aspx">EPM</a>
+                    </li>
+                    <li>
+                        <a href="EMR.aspx">EMR</a>
+                    </li>
+                        <li>
+                        <a href="EHR.aspx">EHR</a>
+                    </li>
+                        <asp:LoginView runat="server" ViewStateMode="Disabled" OnDisposed="Page_Init">
+                            <AnonymousTemplate>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a runat="server" href="Register.aspx">Register</a></li>
+                                    <li><a runat="server" href="Default.aspx">Log in</a></li>
+                                </ul>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a runat="server" href="#" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                    <li>
+                                        <asp:LinkButton ID="LogoutLinkBtn" runat="server" OnClick="LogoutLinkBtn_Click">Logout</asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        
 	<div class="page">
 		<div id="header">
 			<div class="bg-help">
@@ -35,15 +129,15 @@
 				</Items>
 			</asp:Menu>
 		</div>
-		<div class="main">
-			<asp:ContentPlaceHolder ID="MainContent" runat="server"/>
-		</div>
-		<div class="clear">
-		</div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div class="clear">
+        </div>
 	</div>
-	<div class="footer">
-
-	</div>
+        <footer>
+            <p>&copy; <a href="http://tymevotec.somee.com/">TYMEVOTEC</a> <%: DateTime.Now.Year %> - All rights Reserved</p>
+        </footer>
 	</form>
 </body>
 </html>

@@ -167,7 +167,7 @@
         <div id="sectionC" class="tab-pane fade">
             <h3>Pharmacy report</h3>
             <div>
-                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" BorderStyle="Outset" Height="561px" Width="1162px">
+                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" BorderStyle="Outset" Height="561px" Width="100%">
                 <LocalReport ReportPath="Pages\rdlc\Pharmacy_Details_Report.rdlc">
                 <DataSources>
                     <rsweb:ReportDataSource DataSourceId="PharmacySqlDataSource" Name="IEMHRDataSet" />

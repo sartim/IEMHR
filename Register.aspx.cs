@@ -26,14 +26,14 @@ namespace IEMHR
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
             //Create new user and try to store in DB.
             IdentityUser user = new IdentityUser();
-            user.UserName = txtUserName.Text;
-            if (txtPassword.Text == txtConfirmPassword.Text)
+            user.UserName = UserName.Text;
+            if (Password.Text == ConfirmPassword.Text)
             {
                 try
                 {
                     //Create user object.
                     //Database will be created / expanded automatically.
-                    IdentityResult result = manager.Create(user, txtPassword.Text);
+                    IdentityResult result = manager.Create(user, Password.Text);
 
                     if (result.Succeeded)
                     {

@@ -24,9 +24,16 @@
             ID="PatientChartButton" PostBackUrl="~/Pages/Patient_Chart.aspx" />
         <asp:Button runat="server" Text="Import/Export" CssClass="btn btn-default btn-lg btn-block" 
             ID="ImportExportButton" PostBackUrl="~/Pages/Export_Patient_Details.aspx" />
-            
+        <asp:Button runat="server" Text="Patient Scheduling" CssClass="btn btn-default btn-lg btn-block" 
+            ID="PatientSchedulingButton" PostBackUrl="~/Pages/Patient_Schedule.aspx" />
         </div>
     </div>
-
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
 
 </asp:Content>
