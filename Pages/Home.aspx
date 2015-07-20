@@ -9,7 +9,7 @@
                 <div class="col-md-8 col-md-offset-2 text-center">
 
                     <h1>IEMHR</h1>
-                    <h2>Integrated Medical &amp; Health Record </h2>
+                    <h2>Integrated Electronic Medical &amp; Health Record </h2>
                     <p class="p-cls">
                         An integrated solution connecting pharmacies, clinics, hospitals and health providers.
                     </p>

@@ -22,7 +22,7 @@ namespace IEMHR.Pages
             try
             {
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO PhysicianMaster VALUES ('" + txtFirstName.Text + "', '" + txtMiddleName.Text + "', '" + txtLastName.Text + "', '" + txtEmail.Text + "', '" + txtLastName.Text + "', '" + txtEmail.Text + "', '" + txtMpdbRegNum.Text + "', '" + txtDesignation.Text + "', '" + txtCompany.Text + "')", dbCon);
+                SqlCommand cmd = new SqlCommand("INSERT INTO PhysicianMaster VALUES ('" + txtFirstName.Text + "', '" + txtMiddleName.Text + "', '" + txtLastName.Text + "', '" + txtEmail.Text + "', '" + txtLastName.Text + "', '" + txtEmail.Text + "', '" + txtPhoneNum.Text + "', '" + txtMpdbRegNum.Text + "', '" + txtDesignation.Text + "', '" + txtCompany.Text + "')", dbCon);
                 cmd.ExecuteNonQuery();
                 dbCon.Close();
                 Response.Redirect("Physician_Management.aspx");

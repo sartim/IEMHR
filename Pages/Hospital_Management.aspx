@@ -12,6 +12,7 @@
     <div class="tab-content">
         <div id="sectionA" class="tab-pane fade in active">
             <h3>Hospital details </h3>
+            <asp:Literal ID="litStatus" runat="server"></asp:Literal>
             <div class="row">
                 <div class="col-md-8">
                     <div class="form-horizontal">
@@ -64,6 +65,14 @@
                             <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control" />
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtEmail"
                                 CssClass="text-danger" ErrorMessage="The Email field is required." />
+                        </div>
+                    </div>
+                        <div class="form-group">
+                        <asp:Label ID="Label1" runat="server" AssociatedControlID="txtAddress" CssClass="col-md-2 control-label">Address</asp:Label>
+                        <div class="col-md-10">
+                            <asp:TextBox runat="server" ID="txtAddress" CssClass="form-control" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtAddress"
+                                CssClass="text-danger" ErrorMessage="The address field is required." />
                         </div>
                     </div>
                     <div class="form-group">

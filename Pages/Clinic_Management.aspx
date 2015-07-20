@@ -67,6 +67,14 @@
                                 CssClass="text-danger" ErrorMessage="The Email field is required." />
                         </div>
                     </div>
+                        <div class="form-group">
+                        <asp:Label ID="Label1" runat="server" AssociatedControlID="txtAddress" CssClass="col-md-2 control-label">Address</asp:Label>
+                        <div class="col-md-10">
+                            <asp:TextBox runat="server" ID="txtAddress" CssClass="form-control" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtAddress"
+                                CssClass="text-danger" ErrorMessage="The address field is required." />
+                        </div>
+                    </div>
                     <div class="form-group">
                         <asp:Label ID="Label8" runat="server" AssociatedControlID="txtURL" CssClass="col-md-2 control-label">URL</asp:Label>
                         <div class="col-md-10">
